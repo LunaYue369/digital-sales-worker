@@ -1,0 +1,14 @@
+.env
+gmail_token.json
+client_secret.json
+service-account.json
+data/research_cache.json
+data/processed_files.json
+data/sent_log.json
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.DS_Store
