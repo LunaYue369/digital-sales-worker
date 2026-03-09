@@ -26,6 +26,13 @@ app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
 @app.event("message")
 def on_message(event, say):
+    # In DMs, respond to all messages; in channels, ignore (use @mention instead)
+    if event.get("channel_type") == "im":
+        handle_message(event, say)
+
+
+@app.event("app_mention")
+def on_mention(event, say):
     handle_message(event, say)
 
 

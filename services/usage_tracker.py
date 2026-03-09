@@ -11,8 +11,15 @@ log = logging.getLogger(__name__)
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "usage_log.json")
 _lock = threading.Lock()
 
-# GPT-4o pricing (per 1K tokens)
-_COST_PER_1K = {"prompt": 0.0025, "completion": 0.01}
+# GPT-4.1-mini pricing (per 1K tokens): $0.40/M input, $1.60/M output
+_COST_PER_1K = {"prompt": 0.0004, "completion": 0.0016}
+
+# Steps that belong to the outbound email pipeline
+_SEND_STEPS = {"researcher", "copywriter", "reviewer"}
+# Steps that belong to reply analysis
+_REPLY_STEPS = {"reply_analyzer"}
+# Steps that belong to reporting
+_REPORT_STEPS = {"reporter"}
 
 
 def _empty_totals() -> dict:
@@ -121,23 +128,46 @@ def get_campaign_summary(campaign_id: str) -> dict:
 
 
 def get_all_summary() -> dict:
-    """Get cumulative totals — O(1), no need to iterate records."""
+    """Get cumulative totals with by-category breakdown."""
     with _lock:
         data = _load()
     t = data["totals"]
-    campaigns = set(e["campaign_id"] for e in data["records"])
+    records = data["records"]
+    campaigns = set(e["campaign_id"] for e in records if e["campaign_id"] not in ("reporter", "tracking"))
+
+    # Aggregate by category: send / reply_analyzer / reporter
+    categories = {
+        "send": {"calls": 0, "tokens": 0, "cost": 0.0},
+        "reply_analyzer": {"calls": 0, "tokens": 0, "cost": 0.0},
+        "reporter": {"calls": 0, "tokens": 0, "cost": 0.0},
+    }
+    for e in records:
+        step = e["step"]
+        tokens = e.get("prompt_tokens", 0) + e.get("completion_tokens", 0)
+        cost = e.get("estimated_cost", 0)
+        if step in _SEND_STEPS:
+            cat = "send"
+        elif step in _REPLY_STEPS:
+            cat = "reply_analyzer"
+        elif step in _REPORT_STEPS:
+            cat = "reporter"
+        else:
+            cat = "send"
+        categories[cat]["calls"] += 1
+        categories[cat]["tokens"] += tokens
+        categories[cat]["cost"] += cost
+
     return {
         "total_campaigns": len(campaigns),
         "total_calls": t["api_calls"],
-        "total_prompt_tokens": t["prompt_tokens"],
-        "total_completion_tokens": t["completion_tokens"],
         "total_tokens": t["total_tokens"],
         "total_cost": round(t["estimated_cost"], 4),
+        "categories": categories,
     }
 
 
 def format_slack_report(campaign_id: str) -> str:
-    """Format a Slack-friendly usage report."""
+    """Format a Slack-friendly usage report for a specific campaign."""
     s = get_campaign_summary(campaign_id)
     if s["total_calls"] == 0:
         return f"Campaign `{campaign_id}`: no GPT calls recorded."
@@ -156,4 +186,58 @@ def format_slack_report(campaign_id: str) -> str:
             f"{info['prompt_tokens'] + info['completion_tokens']:,} tokens, "
             f"${info['cost']:.4f}"
         )
+    return "\n".join(lines)
+
+
+def format_full_slack_report(sent_count: int, reply_count: int) -> str:
+    """Format the overall usage report with by-category breakdown and averages."""
+    s = get_all_summary()
+    cats = s["categories"]
+
+    lines = [
+        "*Overall Token Usage*",
+        f"Total campaigns: {s['total_campaigns']}",
+        f"Total GPT calls: {s['total_calls']}",
+        f"Total tokens: {s['total_tokens']:,}",
+        f"Total estimated cost: ${s['total_cost']:.4f}",
+        "",
+        "*Breakdown by Function:*",
+    ]
+
+    # Send pipeline
+    c = cats["send"]
+    lines.append(
+        f"  *Sending emails* (researcher + copywriter + reviewer):"
+        f" {c['calls']} calls, {c['tokens']:,} tokens, ${c['cost']:.4f}"
+    )
+    if sent_count > 0:
+        lines.append(
+            f"    Avg cost per email sent: {c['tokens'] // sent_count:,} tokens, "
+            f"${c['cost'] / sent_count:.4f}"
+        )
+
+    # Reply analyzer
+    c = cats["reply_analyzer"]
+    lines.append(
+        f"  *Analyzing replies* (reply_analyzer):"
+        f" {c['calls']} calls, {c['tokens']:,} tokens, ${c['cost']:.4f}"
+    )
+    if reply_count > 0:
+        lines.append(
+            f"    Avg cost per reply analyzed: {c['tokens'] // reply_count:,} tokens, "
+            f"${c['cost'] / reply_count:.4f}"
+        )
+
+    # Reporter
+    c = cats["reporter"]
+    lines.append(
+        f"  *Generating insights* (reporter):"
+        f" {c['calls']} calls, {c['tokens']:,} tokens, ${c['cost']:.4f}"
+    )
+    if c["calls"] > 0:
+        lines.append(
+            f"    Avg cost per report: {c['tokens'] // c['calls']:,} tokens, "
+            f"${c['cost'] / c['calls']:.4f}"
+        )
+
     return "\n".join(lines)
