@@ -120,9 +120,13 @@ def research_company(company: dict, campaign_id: str) -> dict:
                 - Industry: {company.get('industry', 'Unknown')}
                 - Core Business: {company.get('core_business', 'Unknown')}
                 - Country: {company.get('country', 'Unknown')}
+                - State: {company.get('state', 'Unknown')}
                 - City: {company.get('city', 'Unknown')}
                 - Revenue: {company.get('revenue', 'Unknown')}
                 - Employees: {company.get('employees', 'Unknown')}
+                - Phone: {company.get('phone', 'Unknown')}
+                - Google Rating: {company.get('review_rating', 'Unknown')}
+                - Review Count: {company.get('review_count', 'Unknown')}
                 WEBSITE CONTENT (first 3000 chars):
                 {website_text if website_text else '(Could not fetch website)'}"""
     # 获取researcher的_shared+独立人格的string

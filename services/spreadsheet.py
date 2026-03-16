@@ -30,6 +30,14 @@ _COLUMN_MAP = {
     "employees": "employees",
     "contact name": "contact_name",
     "contact": "contact_name",
+    "phone": "phone",
+    "review_rating": "review_rating",
+    "review rating": "review_rating",
+    "rating": "review_rating",
+    "review_count": "review_count",
+    "review count": "review_count",
+    "reviews": "review_count",
+    "state": "state",
 }
 
 # 表格里必须要包含的两个要素
