@@ -6,6 +6,7 @@ from openai import OpenAI
 
 from agents.soul_loader import build_system_prompt
 from services import usage_tracker
+from core.user_config import get_user_config
 
 log = logging.getLogger(__name__)
 
@@ -14,16 +15,36 @@ MODEL = os.getenv("AGENT_MODEL", "gpt-5")
 _client: OpenAI | None = None
 
 
-# 落款签名给user_msg用
-SIGNATURE = (
+# 默认落款签名（fallback if user has no per-user config）
+DEFAULT_SIGNATURE = (
     "Best,\n"
-    "Nate Hillyer\n"
     "GMIC AI, Inc.\n"
-    "nate@gmic.ai\n"
-    "Phone: 657-900-5153\n"
-    "https://gmic.ai | https://telalive.us\n"
-    "LinkedIn: https://www.linkedin.com/company/gmicaiinc"
+    "https://gmic.ai | https://telalive.us"
 )
+
+
+def _get_user_signature(user_id: str) -> str:
+    """Get per-user signature from users.json, or fallback to default."""
+    config = get_user_config(user_id) if user_id else None
+    if config and config.get("signature"):
+        return config["signature"]
+    return DEFAULT_SIGNATURE
+
+
+def _get_user_greeting(user_id: str, company_name: str) -> str:
+    """Get per-user greeting style from users.json, or fallback to default."""
+    config = get_user_config(user_id) if user_id else None
+    if config and config.get("greeting_style"):
+        return config["greeting_style"].replace("{company}", company_name) + "\n\n"
+    return f"Hi {company_name} team,\n\n"
+
+
+def _get_sender_identity(user_id: str) -> str:
+    """Get sender name + company for GPT prompt."""
+    config = get_user_config(user_id) if user_id else None
+    if config and config.get("name"):
+        return f"{config['name']} from GMIC AI"
+    return "a salesperson from GMIC AI"
 
 
 def _get_client() -> OpenAI:
@@ -75,11 +96,11 @@ def _ensure_paragraphs(body: str) -> str:
 
 
 # copywriter初次写或者重写邮件，返回 subject str，body str，tokens消耗字典
-def write_email(company: dict, campaign_id: str, feedback: str = "", previous_email: str = "") -> tuple[str, str, dict]:
+def write_email(company: dict, campaign_id: str, user_id: str = "", feedback: str = "", previous_email: str = "") -> tuple[str, str, dict]:
     # research人格查出来的brief
     brief = company.get("brief", {})
     # 加载copywriter人格
-    system_prompt = build_system_prompt("copywriter")
+    system_prompt = build_system_prompt("copywriter", user_id)
     client = _get_client()
     company_name = company.get("company_name", "")
     # 定制化开头
@@ -96,7 +117,7 @@ def write_email(company: dict, campaign_id: str, feedback: str = "", previous_em
             f"YOUR PREVIOUS EMAIL WAS REJECTED. Reviewer feedback:\n{feedback}\n\n"
             f"PREVIOUS EMAIL:\n{previous_email}\n\n"
             f"Rewrite the subject line AND email body (no greeting, no signature — those are added by code).\n"
-            f"Address ALL feedback points. You are Nate Hillyer from GMIC AI writing TO this company."
+            f"Address ALL feedback points. You are {_get_sender_identity(user_id)} writing TO this company."
         )
     else:
         user_msg = (
@@ -113,7 +134,7 @@ def write_email(company: dict, campaign_id: str, feedback: str = "", previous_em
             f"- Research Reasoning: {brief.get('reasoning', '')}\n"
             f"- Personalization Hooks: {', '.join(hooks) if hooks else 'None'}\n\n"
             f"Write ONLY the subject line and email body. Do NOT include a greeting (Hi/Dear) or signature — those are added automatically by code.\n"
-            f"You are Nate Hillyer from GMIC AI writing TO {company_name}."
+            f"You are {_get_sender_identity(user_id)} writing TO {company_name}."
         )
 
     # 发送给Copywriter模型我们的需求
@@ -130,7 +151,7 @@ def write_email(company: dict, campaign_id: str, feedback: str = "", previous_em
 
     pt = resp.usage.prompt_tokens
     ct = resp.usage.completion_tokens
-    usage_tracker.record(campaign_id, "copywriter", pt, ct)
+    usage_tracker.record(user_id, campaign_id, "copywriter", pt, ct)
 
     # parse GPT返回的结果，一段string，包含subject和body
     subject, raw_body = _parse_email_output(resp.choices[0].message.content)
@@ -140,8 +161,9 @@ def write_email(company: dict, campaign_id: str, feedback: str = "", previous_em
     clean = _clean_body(raw_body)
     # 保证Body分自然段
     clean = _ensure_paragraphs(clean)
-    # 添加hardcode打招呼+hardcode落款
-    greeting = f"Hi {company_name} team,\n\n"
-    body = f"{greeting}{clean}\n\n{SIGNATURE}"
+    # 添加 per-user 打招呼+落款
+    greeting = _get_user_greeting(user_id, company_name)
+    signature = _get_user_signature(user_id)
+    body = f"{greeting}{clean}\n\n{signature}"
 
     return subject, body, {"prompt": pt, "completion": ct}

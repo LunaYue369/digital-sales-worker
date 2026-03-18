@@ -96,7 +96,7 @@ def _fetch_website(url: str) -> str:
     return ""
 
 # 输入某一个公司dataframe的dict，返回对该公司进行网络调查的dict
-def research_company(company: dict, campaign_id: str) -> dict:
+def research_company(company: dict, campaign_id: str, user_id: str = "") -> dict:
     # 找出domain string
     domain = _extract_domain(company.get("website", ""))
     # 检查对该公司的调查是否已经在本地储存超过30天
@@ -130,7 +130,7 @@ def research_company(company: dict, campaign_id: str) -> dict:
                 WEBSITE CONTENT (first 3000 chars):
                 {website_text if website_text else '(Could not fetch website)'}"""
     # 获取researcher的_shared+独立人格的string
-    system_prompt = build_system_prompt("researcher")
+    system_prompt = build_system_prompt("researcher", user_id)
     # call GPT model
     client = _get_client()
     # GPT用researcher人格接受和回答问题
@@ -147,7 +147,7 @@ def research_company(company: dict, campaign_id: str) -> dict:
         response_format={"type": "json_object"},
     )
 
-    usage_tracker.record(campaign_id, "researcher", resp.usage.prompt_tokens, resp.usage.completion_tokens)
+    usage_tracker.record(user_id, campaign_id, "researcher", resp.usage.prompt_tokens, resp.usage.completion_tokens)
 
     #以下就是researcher人格会返回的东西，会存入brief
     """
@@ -207,13 +207,13 @@ def research_company(company: dict, campaign_id: str) -> dict:
 RESEARCH_MAX_WORKERS = int(os.getenv("PIPELINE_MAX_WORKERS", "3"))
 
 # research一个File上的一组公司，并发进行research，返回一个List of Dictionary，每个Dictionary是每个公司的信息，包含公司在表格上的基本信息和brief
-def research_batch(companies: list[dict], campaign_id: str, max_workers: int = RESEARCH_MAX_WORKERS) -> list[dict]:
+def research_batch(companies: list[dict], campaign_id: str, user_id: str = "", max_workers: int = RESEARCH_MAX_WORKERS) -> list[dict]:
     results = [None] * len(companies)
 
     # 并发一次性RESEARCH_MAX_WORKERS个线程，同时跑research_company
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         future_to_idx = {
-            pool.submit(research_company, c, campaign_id): i
+            pool.submit(research_company, c, campaign_id, user_id): i
             for i, c in enumerate(companies)
         }
         # 按顺序把结果research结果加入到results里

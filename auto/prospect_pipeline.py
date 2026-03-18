@@ -1,4 +1,4 @@
-"""Prospect pipeline — find leads via Google Maps scraper, enrich emails, upload to Drive.
+"""Prospect pipeline — per-user. Find leads via Google Maps scraper, enrich emails, upload to Drive.
 
 Only generates CSV and uploads to Drive. Does NOT send emails.
 """
@@ -13,6 +13,7 @@ from datetime import datetime
 
 from services import email_finder, drive_uploader
 from services.spreadsheet import _load_sent_emails
+from core.user_config import user_data_dir
 
 log = logging.getLogger(__name__)
 
@@ -20,10 +21,7 @@ SCRAPER_PATH = os.getenv("GMAPS_SCRAPER_PATH", r"C:\Users\Luna\repos\google-maps
 SCRAPER_DEPTH = int(os.getenv("PROSPECT_SCRAPER_DEPTH", "1"))
 SCRAPER_TIMEOUT = int(os.getenv("PROSPECT_SCRAPER_TIMEOUT", "1800"))
 EMAIL_FINDER_WORKERS = int(os.getenv("PROSPECT_EMAIL_WORKERS", "5"))
-PROSPECT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "prospect_results")
-PROSPECT_LOG_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "prospect_log.json")
 
-# Output CSV columns — matches spreadsheet.py column mappings
 OUTPUT_COLUMNS = [
     "company_name", "contact_email", "website", "industry",
     "city", "state", "country", "phone",
@@ -31,7 +29,15 @@ OUTPUT_COLUMNS = [
 ]
 
 
-def run_prospect(queries: list[str], say, depth: int | None = None):
+def _prospect_dir(user_id: str) -> str:
+    return os.path.join(user_data_dir(user_id), "prospect_results")
+
+
+def _prospect_log_path(user_id: str) -> str:
+    return os.path.join(user_data_dir(user_id), "prospect_log.json")
+
+
+def run_prospect(user_id: str, queries: list[str], say, depth: int | None = None):
     """One-shot: run scraper → find emails → upload CSV to Drive."""
     say(f"Prospect started with {len(queries)} search queries:\n"
         + "\n".join(f"  • {q}" for q in queries))
@@ -39,7 +45,7 @@ def run_prospect(queries: list[str], say, depth: int | None = None):
     # 1. Run gosom scraper
     effective_depth = depth or SCRAPER_DEPTH
     say(f"Running Google Maps scraper (depth={effective_depth}, this may take a few minutes)...")
-    raw_csv = _run_scraper(queries, effective_depth)
+    raw_csv = _run_scraper(user_id, queries, effective_depth)
     if not raw_csv:
         say("Scraper returned no results.")
         return
@@ -52,14 +58,14 @@ def run_prospect(queries: list[str], say, depth: int | None = None):
         return
 
     # 3. Dedup against sent_log + prospect_log
-    sent_emails = _load_sent_emails()
+    sent_emails = _load_sent_emails(user_id)
     sent_domains = set()
     for e in sent_emails:
         parts = e.split("@")
         if len(parts) == 2:
             sent_domains.add(parts[1].lower())
 
-    prospected_domains = _load_prospect_log()
+    prospected_domains = _load_prospect_log(user_id)
 
     leads = []
     skipped_sent = 0
@@ -82,7 +88,7 @@ def run_prospect(queries: list[str], say, depth: int | None = None):
         say("No new leads after dedup.")
         return
 
-    # 4. Find missing emails (second layer: crawl /contact pages)
+    # 4. Find missing emails
     missing = [l for l in leads if not l["contact_email"]]
     has_email = len(leads) - len(missing)
     if missing:
@@ -104,11 +110,11 @@ def run_prospect(queries: list[str], say, depth: int | None = None):
     # 6. Save CSV locally + upload to Drive
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"prospect_{timestamp}.csv"
-    local_path = _save_csv(final, filename)
+    local_path = _save_csv(user_id, final, filename)
     say(f"Saved {len(final)} leads to `{filename}`.")
 
     try:
-        drive_uploader.upload_csv(local_path, filename)
+        drive_uploader.upload_csv(user_id, local_path, filename)
         say(f"Uploaded `{filename}` to Drive.")
     except Exception as e:
         log.error("Drive upload failed: %s", e)
@@ -116,7 +122,7 @@ def run_prospect(queries: list[str], say, depth: int | None = None):
 
     # 7. Save new domains to prospect_log
     new_domains = {_extract_domain(l["website"]) for l in final}
-    _save_prospect_log(new_domains)
+    _save_prospect_log(user_id, new_domains)
 
     # 8. Summary
     say(f"*Prospect complete:*\n"
@@ -132,15 +138,16 @@ def run_prospect(queries: list[str], say, depth: int | None = None):
 
 # ── Scraper ────────────────────────────────────────────────────────────
 
-def _run_scraper(queries: list[str], depth: int) -> str | None:
+def _run_scraper(user_id: str, queries: list[str], depth: int) -> str | None:
     """Run gosom scraper, return path to output CSV or None."""
-    os.makedirs(PROSPECT_DIR, exist_ok=True)
+    prospect_dir = _prospect_dir(user_id)
+    os.makedirs(prospect_dir, exist_ok=True)
 
-    queries_file = os.path.join(PROSPECT_DIR, "_queries.txt")
+    queries_file = os.path.join(prospect_dir, "_queries.txt")
     with open(queries_file, "w", encoding="utf-8") as f:
         f.write("\n".join(queries) + "\n")
 
-    output_file = os.path.join(PROSPECT_DIR, "_raw_results.csv")
+    output_file = os.path.join(prospect_dir, "_raw_results.csv")
     if os.path.exists(output_file):
         os.remove(output_file)
 
@@ -167,12 +174,10 @@ def _run_scraper(queries: list[str], depth: int) -> str | None:
 # ── CSV Parsing ────────────────────────────────────────────────────────
 
 def _parse_gosom_csv(csv_path: str) -> list[dict]:
-    """Parse gosom output CSV into standardized lead dicts."""
     leads = []
     with open(csv_path, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # Parse complete_address JSON
             city, addr_state, country = "", "", ""
             try:
                 addr = json.loads(row.get("complete_address", "{}") or "{}")
@@ -182,7 +187,6 @@ def _parse_gosom_csv(csv_path: str) -> list[dict]:
             except (json.JSONDecodeError, TypeError):
                 pass
 
-            # Extract first email if multiple
             raw_email = (row.get("emails") or "").strip()
             email = raw_email.split(",")[0].strip() if raw_email else ""
 
@@ -216,24 +220,24 @@ def _extract_domain(website: str) -> str:
 
 # ── Prospect Log ──────────────────────────────────────────────────────
 
-def _load_prospect_log() -> set[str]:
-    """Load previously prospected domains from prospect_log.json."""
-    if not os.path.exists(PROSPECT_LOG_PATH):
+def _load_prospect_log(user_id: str) -> set[str]:
+    path = _prospect_log_path(user_id)
+    if not os.path.exists(path):
         return set()
     try:
-        with open(PROSPECT_LOG_PATH, "r", encoding="utf-8") as f:
+        with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         return set(data.get("domains", {}).keys())
     except (json.JSONDecodeError, OSError):
         return set()
 
 
-def _save_prospect_log(new_domains: set[str]):
-    """Append new domains to prospect_log.json."""
+def _save_prospect_log(user_id: str, new_domains: set[str]):
+    path = _prospect_log_path(user_id)
     existing = {}
-    if os.path.exists(PROSPECT_LOG_PATH):
+    if os.path.exists(path):
         try:
-            with open(PROSPECT_LOG_PATH, "r", encoding="utf-8") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 existing = json.load(f).get("domains", {})
         except (json.JSONDecodeError, OSError):
             pass
@@ -243,15 +247,14 @@ def _save_prospect_log(new_domains: set[str]):
         if domain and domain not in existing:
             existing[domain] = today
 
-    os.makedirs(os.path.dirname(PROSPECT_LOG_PATH), exist_ok=True)
-    with open(PROSPECT_LOG_PATH, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
         json.dump({"domains": existing}, f, indent=2, ensure_ascii=False)
 
 
 # ── Email Enrichment ───────────────────────────────────────────────────
 
 def _enrich_emails(leads: list[dict]):
-    """Fill missing emails by crawling company websites (concurrent)."""
     with ThreadPoolExecutor(max_workers=EMAIL_FINDER_WORKERS) as pool:
         futures = {
             pool.submit(email_finder.find_email, lead["website"]): lead
@@ -267,12 +270,12 @@ def _enrich_emails(leads: list[dict]):
                 log.debug("Email finder failed for %s: %s", lead["website"], e)
 
 
-# ── Output ─────────────────────────────────────────────────────────────
+# ── Output ─────────────────────────────────────────────────────────
 
-def _save_csv(leads: list[dict], filename: str) -> str:
-    """Save leads to a clean CSV."""
-    os.makedirs(PROSPECT_DIR, exist_ok=True)
-    path = os.path.join(PROSPECT_DIR, filename)
+def _save_csv(user_id: str, leads: list[dict], filename: str) -> str:
+    prospect_dir = _prospect_dir(user_id)
+    os.makedirs(prospect_dir, exist_ok=True)
+    path = os.path.join(prospect_dir, filename)
     with open(path, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=OUTPUT_COLUMNS)
         writer.writeheader()

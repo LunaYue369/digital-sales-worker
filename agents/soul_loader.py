@@ -2,23 +2,24 @@ import logging
 import os
 from pathlib import Path
 
+from core.user_config import user_config_dir
+
 log = logging.getLogger(__name__)
-# 储存souls的文件夹
+
+# 共享的默认 souls 目录
 SOULS_DIR = Path(os.path.dirname(__file__)) / "souls"
-# 储存
 _souls: dict[str, str] = {}
-# 储存通用给所有agents的_shared.md的string
 _shared: str = ""
 
-# load所有agents都需要阅读的md，该function在main.py初次启动的时候就load了，然后
+
 def load_all():
+    """Load shared and default agent souls at startup."""
     global _shared
 
     if not SOULS_DIR.is_dir():
         log.error("Souls directory not found: %s", SOULS_DIR)
         return
 
-    # 在_share里储存_shared.md的string
     shared_path = SOULS_DIR / "_shared.md"
     if shared_path.exists():
         _shared = shared_path.read_text(encoding="utf-8")
@@ -26,11 +27,9 @@ def load_all():
     else:
         log.warning("Shared soul not found: %s", shared_path)
 
-    # 对于soul文件夹里的所有其他独立的md
     for md_file in SOULS_DIR.glob("*.md"):
         if md_file.name.startswith("_"):
             continue
-        # 存进dictionary，{人格名字：对应md的string}
         agent_id = md_file.stem
         _souls[agent_id] = md_file.read_text(encoding="utf-8")
         log.info("Loaded soul: %s (%d chars)", agent_id, len(_souls[agent_id]))
@@ -40,20 +39,50 @@ def load_all():
     else:
         log.info("Soul loader ready — %d agent souls loaded", len(_souls))
 
-# 获取_shared string
+
 def get_shared() -> str:
     return _shared
 
-# 获取某个人格的string
+
 def get_soul(agent_id: str) -> str:
     return _souls.get(agent_id, "")
 
-# 拼接_shared + 独立人格 string
-def build_system_prompt(agent_id: str) -> str:
+
+def _get_user_soul(agent_id: str, user_id: str) -> str | None:
+    """Try to load a per-user soul from config/{dir}/souls/{agent_id}.md."""
+    if not user_id:
+        return None
+    user_soul_path = Path(user_config_dir(user_id)) / "souls" / f"{agent_id}.md"
+    if user_soul_path.exists():
+        return user_soul_path.read_text(encoding="utf-8")
+    return None
+
+
+def build_system_prompt(agent_id: str, user_id: str = "") -> str:
+    """Build system prompt: _shared + default soul + per-user soul (if exists).
+
+    Layered composition:
+    1. agents/souls/_shared.md           (always — company, product, rules)
+    2. agents/souls/{agent_id}.md        (always — agent role, format, rules)
+    3. config/{dir}/souls/{agent_id}.md  (if exists — per-user style/preferences)
+
+    Per-user soul is ADDITIVE, not a replacement. This way per-user files
+    only need to contain what's different (e.g. Nate's subject line style),
+    while the generic agent soul provides the base (input format, output format, etc.).
+    """
     parts = []
     if _shared:
         parts.append(_shared)
+
+    # Always include the default agent soul
     soul = get_soul(agent_id)
     if soul:
         parts.append(soul)
+
+    # Layer per-user soul on top (additive)
+    user_soul = _get_user_soul(agent_id, user_id)
+    if user_soul is not None:
+        parts.append(user_soul)
+        log.debug("Layered per-user soul for %s (user=%s)", agent_id, user_id)
+
     return "\n\n---\n\n".join(parts)

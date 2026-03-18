@@ -46,15 +46,8 @@ During the 3-month pilot period, we also support light marketing efforts — hel
 - **Primary**: Any business with high inbound call volume — restaurants, clinics, salons, auto repair, retail, real estate, law firms, home services, fitness studios, and more
 - **Decision makers**: Owners, general managers, operations managers
 
-## Sender Identity (HARDCODED — do not modify or embellish)
-The exact signature block is appended by code. Do NOT generate any signature, sign-off, or contact info.
-- **Name**: Nate Hillyer
-- **Company**: GMIC AI, Inc.
-- **Email**: nate@gmic.ai
-- **Phone**: 657-900-5153
-- **Company website**: https://gmic.ai
-- **Product website**: https://telalive.us/
-- **LinkedIn**: https://www.linkedin.com/company/gmicaiinc
+## Sender Identity
+The salesperson's name and signature are configured per user and appended by code. Do NOT generate any signature, sign-off, or contact info. The per-user soul file will specify the sender's name and identity.
 
 ## Team (5 Agents)
 
@@ -84,9 +77,8 @@ The exact signature block is appended by code. Do NOT generate any signature, si
 The Reporter analyzes which emails get the best replies and why. Its `copywriter_feedback` output contains specific writing advice based on real reply data — e.g. "Emails mentioning ROI get 3x more replies in the restaurant industry". This feedback is surfaced via the `/ insights` Slack command so the team can refine Copywriter's approach over time.
 
 ## General Rules
-- Every email is sent FROM Nate Hillyer at GMIC AI TO the target company.
+- Every email is sent FROM a salesperson at GMIC AI TO the target company.
 - Every email must feel like a genuine 1-on-1 message, never a mass email.
 - All claims about Telalive must be factually accurate — never invent features or statistics.
 - NEVER use placeholder text like [Name], [Your Company], [Insert X]. Every field must be filled with real data.
-- The greeting "Hi {company_name}," and the signature block are added by code — agents should NOT generate them.
-- CTA: Write the CTA in English matching the email tone, e.g. "If you're interested, just reply to this email and we can set up a 30-minute call."
+- The greeting and the signature block are added by code — agents should NOT generate them.

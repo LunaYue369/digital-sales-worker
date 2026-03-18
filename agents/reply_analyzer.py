@@ -22,9 +22,9 @@ def _get_client() -> OpenAI:
 
 
 # Reply Analyzer Agent — 使用 GPT 深度分析首次回复邮件。
-def analyze_reply(reply_record: dict) -> dict:
+def analyze_reply(reply_record: dict, user_id: str = "") -> dict:
     # 加载人格
-    system_prompt = build_system_prompt("reply_analyzer")
+    system_prompt = build_system_prompt("reply_analyzer", user_id)
     client = _get_client()
 
     # 构建用户消息：给 reply_analyzer 提供原始邮件上下文 + 回复内容
@@ -51,7 +51,7 @@ def analyze_reply(reply_record: dict) -> dict:
 
     # 记录 token 用量
     campaign_id = reply_record.get("campaign_id", "tracking")
-    usage_tracker.record(campaign_id, "reply_analyzer", resp.usage.prompt_tokens, resp.usage.completion_tokens)
+    usage_tracker.record(user_id, campaign_id, "reply_analyzer", resp.usage.prompt_tokens, resp.usage.completion_tokens)
 
     try:
         analysis = json.loads(resp.choices[0].message.content)

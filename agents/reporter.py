@@ -23,13 +23,13 @@ def _get_client() -> OpenAI:
     return _client
 
 
-def generate_insights(stats_summary: dict) -> dict:
+def generate_insights(stats_summary: dict, user_id: str = "") -> dict:
     """
     Generate insights from aggregated campaign stats.
     stats_summary should include: reply_rate, industry_breakdown,
     subject_performance, length_analysis, timing_data, sentiment_summary, etc.
     """
-    system_prompt = build_system_prompt("reporter")
+    system_prompt = build_system_prompt("reporter", user_id)
     client = _get_client()
 
     user_msg = (
@@ -49,7 +49,7 @@ def generate_insights(stats_summary: dict) -> dict:
         response_format={"type": "json_object"},
     )
 
-    usage_tracker.record("reporter", "reporter", resp.usage.prompt_tokens, resp.usage.completion_tokens)
+    usage_tracker.record(user_id, "reporter", "reporter", resp.usage.prompt_tokens, resp.usage.completion_tokens)
 
     try:
         return json.loads(resp.choices[0].message.content)

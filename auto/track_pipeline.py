@@ -1,10 +1,4 @@
-"""Track Pipeline — 后台轮询检测首次回复，调用 GPT 分析，Slack 通知。
-
-流程：
-1. 每 POLL_INTERVAL 秒调用 reply_tracker.check_replies() 检测新回复
-2. 非真人回复（bounce / ooo / spam / auto_reply）→ 直接 Slack 通知
-3. 真人回复 → 并发调用 reply_analyzer GPT 分析 → 写回 reply_log → Slack 通知
-"""
+"""Track Pipeline — per-user background reply polling + GPT analysis + Slack notification."""
 
 import logging
 import os
@@ -18,38 +12,31 @@ from agents import reply_analyzer
 log = logging.getLogger(__name__)
 
 POLL_INTERVAL = int(os.getenv("REPLY_POLL_INTERVAL", "60"))
-# reply_analyzer 分析并发数，真人回复较少所以不需要太多
 MAX_ANALYZE_WORKERS = int(os.getenv("TRACK_MAX_WORKERS", "5"))
 
 
-# 后台轮询主循环，由 bot.py 的 / track 命令在独立线程中启动
-def run_track_pipeline(say):
+def run_track_pipeline(user_id: str, say):
+    say(f"\U0001f50d *Reply tracking started*\nPolling every {POLL_INTERVAL}s \u2022 Use `/ stop track` to stop")
 
-    say(f"Reply tracking started. Polling every {POLL_INTERVAL}s...")
-
-    while state.is_tracking():
+    while state.is_tracking(user_id):
         try:
-            # 检查有没有新 replies
-            new_replies = reply_tracker.check_replies()
+            new_replies = reply_tracker.check_replies(user_id)
 
             if new_replies:
-                _process_replies(new_replies, say)
+                _process_replies(user_id, new_replies, say)
 
         except Exception as e:
             log.error("Tracking replies error: %s", e, exc_info=True)
 
-        # 可中断等待：每秒检查一次 tracking 状态，确保 / stop track 能秒停
         for _ in range(POLL_INTERVAL):
-            if not state.is_tracking():
+            if not state.is_tracking(user_id):
                 break
             time.sleep(1)
 
-    say("Reply tracking stopped.")
+    say("\u23f9\ufe0f *Reply tracking stopped.*")
 
 
-# 处理本轮检测到的所有新回复。非真人回复直接通知，真人回复并发调用 GPT 分析
-def _process_replies(new_replies: list[dict], say):
-    # 先处理非真人回复（不需要 GPT，直接通知）
+def _process_replies(user_id: str, new_replies: list[dict], say):
     human_replies = []
     for reply in new_replies:
         rtype = reply["reply_type"]
@@ -59,23 +46,20 @@ def _process_replies(new_replies: list[dict], say):
         if rtype == "human":
             human_replies.append(reply)
         elif rtype == "bounce":
-            say(f"Bounce: `{email}` ({company})")
+            say(f"\u26a0\ufe0f *Bounce* \u2022 `{email}` \u2022 {company}")
         elif rtype == "ooo":
-            say(f"Out-of-office: `{email}` ({company})")
+            say(f"\U0001f3d6\ufe0f *Out-of-Office* \u2022 `{email}` \u2022 {company}")
         elif rtype == "spam_auto":
-            say(f"Spam notification: `{email}` ({company})")
+            say(f"\U0001f6ab *Spam Notification* \u2022 `{email}` \u2022 {company}")
         elif rtype == "auto_reply":
-            say(f"Auto-reply: `{email}` ({company})")
+            say(f"\U0001f916 *Auto-Reply* \u2022 `{email}` \u2022 {company}")
 
     if not human_replies:
         return
 
-    # 真人回复：并发调用 reply_analyzer 分析
-    # 刚开启 tracking 时可能积攒了很多未处理的回复，并发能大幅加速
-    # 稳定运行后通常每轮 0-2 封，并发开销可忽略
     with ThreadPoolExecutor(max_workers=MAX_ANALYZE_WORKERS) as pool:
         futures = {
-            pool.submit(_analyze_reply, reply): reply
+            pool.submit(_analyze_reply, user_id, reply): reply
             for reply in human_replies
         }
         for future in as_completed(futures):
@@ -86,18 +70,41 @@ def _process_replies(new_replies: list[dict], say):
                 log.error("Reply analysis failed for %s: %s",
                           reply.get("company_name", "?"), e)
                 analysis = {}
-            # 不管分析成功还是失败，都发 Slack 通知
             _notify_human_reply(reply, analysis, say)
 
 
-# 调用 reply_analyzer 人格分析，并将结果写回 reply_log
-def _analyze_reply(reply_record: dict) -> dict:
-    analysis = reply_analyzer.analyze_reply(reply_record)
-    reply_tracker.update_reply_analysis(reply_record["reply_message_id"], analysis)
+def _analyze_reply(user_id: str, reply_record: dict) -> dict:
+    analysis = reply_analyzer.analyze_reply(reply_record, user_id)
+    reply_tracker.update_reply_analysis(user_id, reply_record["reply_message_id"], analysis)
     return analysis
 
 
-# 格式化并发送真人首次回复的 Slack 通知
+_SENTIMENT_LABELS = {
+    "interested": "Positive - prospect is interested",
+    "rejected": "Negative - prospect declined",
+    "neutral": "Neutral - no clear signal",
+}
+
+_INTENT_LABELS = {
+    "interested": "Wants to learn more or schedule a call",
+    "not_interested": "Explicitly not interested",
+    "asking_question": "Has specific questions about the product",
+    "requesting_info": "Wants pricing, demos, or materials",
+    "referring_to_colleague": "Redirecting to someone else",
+    "unsubscribe": "Wants to be removed from mailing",
+    "complaint": "Negative feedback about the outreach",
+    "wrong_person": "Not the right contact",
+    "just_acknowledging": "Just acknowledging receipt",
+    "other": "Other",
+}
+
+_SENTIMENT_EMOJI = {
+    "interested": "\U0001f7e2",   # green circle
+    "rejected": "\U0001f534",     # red circle
+    "neutral": "\U0001f7e1",      # yellow circle
+}
+
+
 def _notify_human_reply(reply_record: dict, analysis: dict, say):
     company = reply_record.get("company_name", "?")
     from_addr = reply_record.get("reply_from", "?")
@@ -111,19 +118,28 @@ def _notify_human_reply(reply_record: dict, analysis: dict, say):
     tip = analysis.get("improvement_tip", "")
     factors = analysis.get("company_factors", {})
 
-    # 构建 Slack 消息
-    msg = (
-        f"*New reply: {company}* ({industry})\n"
-        f"From: {from_addr}\n"
-        f"Sentiment: *{sentiment}* | Intent: {intent}\n"
-        f"Time to reply: {reply_record.get('time_to_reply_hours', '?')}h\n"
-    )
-    if reason:
-        msg += f"Summary: {reason}\n"
-    if why:
-        msg += f"Analysis: {why}\n"
+    emoji = _SENTIMENT_EMOJI.get(sentiment, "\u2753")
+    sentiment_label = _SENTIMENT_LABELS.get(sentiment, sentiment)
+    intent_label = _INTENT_LABELS.get(intent, intent)
 
-    # 公司画像
+    # Header
+    msg = f"{emoji} *New Reply: {company}* ({industry})\n\n"
+
+    # Basic info
+    msg += f"\U0001f4e8 *From:* {from_addr}\n"
+    msg += f"\u23f1\ufe0f *Response time:* {reply_record.get('time_to_reply_hours', '?')} hours\n\n"
+
+    # Sentiment & Intent (separate lines, human-readable)
+    msg += f"\U0001f3af *Sentiment:* {sentiment_label}\n"
+    msg += f"\U0001f4ac *Intent:* {intent_label}\n\n"
+
+    # Summary & Analysis
+    if reason:
+        msg += f"\U0001f4cb *Summary:*\n{reason}\n\n"
+    if why:
+        msg += f"\U0001f50d *Analysis:*\n{why}\n\n"
+
+    # Company profile
     if factors:
         parts = []
         if factors.get("size_signal") and factors["size_signal"] != "unknown":
@@ -133,17 +149,20 @@ def _notify_human_reply(reply_record: dict, analysis: dict, say):
         if factors.get("current_solution"):
             parts.append(f"Current solution: {factors['current_solution']}")
         if parts:
-            msg += f"Company profile: {' | '.join(parts)}\n"
+            msg += f"\U0001f3e2 *Company Profile:*\n" + "\n".join(f"  \u2022 {p}" for p in parts) + "\n\n"
 
-    # 跟进建议（告诉销售怎么回复这封邮件）
+    # Follow-up advice
     if follow_up:
-        msg += f"\n*Follow-up advice:* {follow_up}\n"
+        msg += f"\U0001f4a1 *Follow-up Advice:*\n{follow_up}\n\n"
 
-    # 邮件改进建议（改进未来的冷邮件）
+    # Improvement tip
     if tip:
-        msg += f"\n*Improvement tip:* {tip}\n"
+        msg += f"\U0001f4dd *Improvement Tip:*\n{tip}\n\n"
 
-    # 附上回复原文摘要
-    msg += f"---\n_{reply_record.get('reply_body', '')[:300]}_"
+    # Original reply text
+    # Use > quote block instead of _italic_ to avoid Slack markdown breaking on multiline
+    reply_body = reply_record.get("reply_body", "")[:300]
+    quoted = "\n".join(f"> {line}" for line in reply_body.split("\n"))
+    msg += f"---\n\U0001f4e9 *Original Reply:*\n{quoted}"
 
     say(msg)

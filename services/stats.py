@@ -1,4 +1,4 @@
-"""Stats Engine — aggregates sent/reply data for reporting and insights.
+"""Stats Engine — per-user, aggregates sent/reply data for reporting and insights.
 
 Only tracks first replies, no multi-round conversations.
 """
@@ -6,23 +6,20 @@ Only tracks first replies, no multi-round conversations.
 import logging
 from collections import defaultdict
 
-from services.email_sender import get_sent_log
-from services.reply_tracker import get_reply_log
+from services import email_sender, reply_tracker
 
 log = logging.getLogger(__name__)
 
 
-# Safe division, returns percentage. Returns 0 if divisor is 0.
 def _safe_div(a, b):
     return round(a / b * 100, 1) if b else 0.0
 
 
 # ── Overview ────────────────────────────────────────────────────────
 
-# Overall campaign stats: sent count, reply rate, sentiment breakdown.
-def get_overview() -> dict:
-    sent = get_sent_log()
-    replies = get_reply_log()
+def get_overview(user_id: str) -> dict:
+    sent = email_sender.get_sent_log(user_id)
+    replies = reply_tracker.get_reply_log(user_id)
 
     total_sent = sum(1 for s in sent if s["status"] == "sent")
     human_replies = [r for r in replies if r["reply_type"] == "human"]
@@ -30,7 +27,6 @@ def get_overview() -> dict:
     ooo = [r for r in replies if r["reply_type"] == "ooo"]
     spam = [r for r in replies if r["reply_type"] == "spam_auto"]
 
-    # Sentiment breakdown from analyzed human replies
     analyzed = [r for r in human_replies if r.get("analysis")]
     interested = sum(1 for r in analyzed if r["analysis"].get("sentiment") == "interested")
     rejected = sum(1 for r in analyzed if r["analysis"].get("sentiment") == "rejected")
@@ -49,7 +45,6 @@ def get_overview() -> dict:
     }
 
 
-# Average time to reply in hours.
 def _avg_time_to_reply(replies: list[dict]) -> float:
     times = [r["time_to_reply_hours"] for r in replies if r.get("time_to_reply_hours", 0) > 0]
     return round(sum(times) / len(times), 1) if times else 0.0
@@ -57,9 +52,8 @@ def _avg_time_to_reply(replies: list[dict]) -> float:
 
 # ── Timing ──────────────────────────────────────────────────────────
 
-# Reply timing distribution: how long it takes for prospects to reply.
-def get_timing_stats() -> dict:
-    replies = [r for r in get_reply_log() if r["reply_type"] == "human"]
+def get_timing_stats(user_id: str) -> dict:
+    replies = [r for r in reply_tracker.get_reply_log(user_id) if r["reply_type"] == "human"]
 
     if not replies:
         return {"distribution": {}, "avg_hours": 0, "median_hours": 0}
@@ -100,18 +94,15 @@ def get_timing_stats() -> dict:
 
 # ── Industry Breakdown ──────────────────────────────────────────────
 
-# Reply rate, sentiment, and company profile factors by industry.
-def get_industry_stats() -> list[dict]:
-    sent = get_sent_log()
-    replies = get_reply_log()
+def get_industry_stats(user_id: str) -> list[dict]:
+    sent = email_sender.get_sent_log(user_id)
+    replies = reply_tracker.get_reply_log(user_id)
 
-    # Count sent emails per industry
     sent_by_industry = defaultdict(int)
     for s in sent:
         if s["status"] == "sent" and s.get("industry"):
             sent_by_industry[s["industry"]] += 1
 
-    # Collect human replies per industry
     replies_by_industry = defaultdict(list)
     for r in replies:
         if r["reply_type"] == "human" and r.get("industry"):
@@ -123,12 +114,10 @@ def get_industry_stats() -> list[dict]:
         ind_replies = replies_by_industry.get(industry, [])
         analyzed = [r for r in ind_replies if r.get("analysis")]
 
-        # Sentiment counts for this industry
         sentiments = defaultdict(int)
         for r in analyzed:
             sentiments[r["analysis"].get("sentiment", "neutral")] += 1
 
-        # Company profile factors (pain points, current solutions, size signals)
         pain_points = []
         current_solutions = []
         size_signals = defaultdict(int)
@@ -158,12 +147,10 @@ def get_industry_stats() -> list[dict]:
 
 # ── Subject Line Stats ──────────────────────────────────────────────
 
-# Per-email subject line performance (used by Slack report and insights summary).
-def get_subject_stats() -> list[dict]:
-    sent = get_sent_log()
-    replies = get_reply_log()
+def get_subject_stats(user_id: str) -> list[dict]:
+    sent = email_sender.get_sent_log(user_id)
+    replies = reply_tracker.get_reply_log(user_id)
 
-    # thread_id -> first human reply
     reply_by_thread = {}
     for r in replies:
         if r["reply_type"] == "human":
@@ -194,10 +181,9 @@ def get_subject_stats() -> list[dict]:
 
 # ── Email Length Stats ──────────────────────────────────────────────
 
-# Reply rate by email body length bucket.
-def get_length_stats() -> dict:
-    sent = get_sent_log()
-    replies = get_reply_log()
+def get_length_stats(user_id: str) -> dict:
+    sent = email_sender.get_sent_log(user_id)
+    replies = reply_tracker.get_reply_log(user_id)
 
     reply_threads = {r["thread_id"] for r in replies if r["reply_type"] == "human"}
 
@@ -207,7 +193,6 @@ def get_length_stats() -> dict:
         if s["status"] != "sent":
             continue
         length = s.get("body_length", 0)
-        # Estimate word count (~5 chars per word)
         words = length // 5 if length else 0
 
         if words < 80:
@@ -217,9 +202,9 @@ def get_length_stats() -> dict:
         else:
             bucket = "long (>120)"
 
-        buckets[bucket][0] += 1  # total sent
+        buckets[bucket][0] += 1
         if s.get("thread_id") in reply_threads:
-            buckets[bucket][1] += 1  # got reply
+            buckets[bucket][1] += 1
 
     result = {}
     for bucket, (total, replied) in buckets.items():
@@ -233,21 +218,17 @@ def get_length_stats() -> dict:
 
 # ── Reply Detail List ───────────────────────────────────────────────
 
-# All human first replies, optionally filtered by sentiment.
-def get_all_replies(sentiment_filter: str = None) -> list[dict]:
-    replies = [r for r in get_reply_log() if r["reply_type"] == "human"]
+def get_all_replies(user_id: str, sentiment_filter: str = None) -> list[dict]:
+    replies = [r for r in reply_tracker.get_reply_log(user_id) if r["reply_type"] == "human"]
     if sentiment_filter:
         replies = [r for r in replies if r.get("analysis", {}).get("sentiment") == sentiment_filter]
     return replies
 
 
 # ── Compact Stats for Insights Agent ────────────────────────────────
-# Principle: pre-aggregate in code, only send summaries to GPT.
-# This reduces token usage from ~5000 to ~800 for 200 sent emails.
 
-# Subject line summary: only include replied subjects + counts, skip the 192 no-reply entries.
-def _get_subject_summary() -> dict:
-    all_subjects = get_subject_stats()
+def _get_subject_summary(user_id: str) -> dict:
+    all_subjects = get_subject_stats(user_id)
     replied = [s for s in all_subjects if s["got_reply"]]
     no_reply_count = len(all_subjects) - len(replied)
 
@@ -269,9 +250,8 @@ def _get_subject_summary() -> dict:
     }
 
 
-# Reply analysis summary: extract core GPT analysis fields, exclude raw body text.
-def _get_reply_analysis_summary() -> list[dict]:
-    replies = get_all_replies()
+def _get_reply_analysis_summary(user_id: str) -> list[dict]:
+    replies = get_all_replies(user_id)
     summaries = []
     for r in replies:
         a = r.get("analysis", {}) or {}
@@ -293,119 +273,156 @@ def _get_reply_analysis_summary() -> list[dict]:
     return summaries
 
 
-# Build compact stats dict for the reporter agent (GPT insights).
-def get_full_stats_for_insights() -> dict:
+def get_full_stats_for_insights(user_id: str) -> dict:
     return {
-        "overview": get_overview(),
-        "industry_breakdown": get_industry_stats(),
-        "subject_summary": _get_subject_summary(),
-        "length_analysis": get_length_stats(),
-        "timing": get_timing_stats(),
-        "reply_analyses": _get_reply_analysis_summary(),
+        "overview": get_overview(user_id),
+        "industry_breakdown": get_industry_stats(user_id),
+        "subject_summary": _get_subject_summary(user_id),
+        "length_analysis": get_length_stats(user_id),
+        "timing": get_timing_stats(user_id),
+        "reply_analyses": _get_reply_analysis_summary(user_id),
     }
 
 
 # ── Slack Report Formatting ─────────────────────────────────────────
 
-# Full Slack report, code-only stats (no GPT call).
-def format_full_report_slack() -> str:
+_SENTIMENT_EMOJI = {
+    "interested": "\U0001f7e2",
+    "rejected": "\U0001f534",
+    "neutral": "\U0001f7e1",
+}
+
+
+def format_full_report_slack(user_id: str) -> str:
     sections = []
 
-    # ── 1. Overview ──────────────────────────────────────────────────
-    o = get_overview()
+    # ── 1. Overview ──
+    o = get_overview(user_id)
+    s = o["sentiment"]
     sections.append(
-        f"*1. Overview*\n"
-        f"Sent: {o['total_sent']}\n"
-        f"Human replies: {o['total_replies']} ({o['reply_rate']}%)\n"
-        f"Bounces: {o['bounces']} ({o['bounce_rate']}%)\n"
-        f"OOO: {o['ooo']} | Spam notifications: {o['spam_auto']}\n"
-        f"Avg time to reply: {o['avg_time_to_reply_hours']}h\n"
-        f"Sentiment: {o['sentiment']['interested']} interested / "
-        f"{o['sentiment']['neutral']} neutral / "
-        f"{o['sentiment']['rejected']} rejected"
+        f"\U0001f4ca *Campaign Overview*\n"
+        f"{'─' * 30}\n"
+        f"\U0001f4e4 Sent: *{o['total_sent']}*\n"
+        f"\U0001f4e8 Human replies: *{o['total_replies']}* ({o['reply_rate']}%)\n"
+        f"\u26a0\ufe0f Bounces: {o['bounces']} ({o['bounce_rate']}%)  \u2022  "
+        f"\U0001f3d6\ufe0f OOO: {o['ooo']}  \u2022  "
+        f"\U0001f6ab Spam: {o['spam_auto']}\n"
+        f"\u23f1\ufe0f Avg reply time: *{o['avg_time_to_reply_hours']}h*\n\n"
+        f"\U0001f7e2 Interested: *{s['interested']}*  \u2022  "
+        f"\U0001f7e1 Neutral: *{s['neutral']}*  \u2022  "
+        f"\U0001f534 Rejected: *{s['rejected']}*"
     )
 
-    # ── 2. Industry Breakdown ────────────────────────────────────────
-    ind_stats = get_industry_stats()
+    # ── 2. Industry Breakdown ──
+    ind_stats = get_industry_stats(user_id)
     if ind_stats:
-        lines = ["*2. Reply Rate by Industry*"]
-        for s in ind_stats:
-            sentiment_str = ", ".join(f"{k}: {v}" for k, v in s.get("sentiment", {}).items())
-            line = (
-                f"  *{s['industry']}*: {s['replies']}/{s['sent']} "
-                f"({s['reply_rate']}%) | {sentiment_str or 'n/a'}"
+        lines = [f"\U0001f3ed *Industry Breakdown*\n{'─' * 30}"]
+        for st in ind_stats:
+            sentiment_parts = []
+            for k, v in st.get("sentiment", {}).items():
+                emoji = _SENTIMENT_EMOJI.get(k, "")
+                sentiment_parts.append(f"{emoji} {v}")
+            sentiment_str = "  ".join(sentiment_parts) if sentiment_parts else "—"
+
+            lines.append(
+                f"\n\u25b6\ufe0f *{st['industry']}* — "
+                f"{st['replies']}/{st['sent']} replies ({st['reply_rate']}%)"
             )
-            if s.get("pain_points"):
-                line += f"\n    Pain points: {', '.join(s['pain_points'][:3])}"
-            if s.get("current_solutions"):
-                line += f"\n    Current solutions: {', '.join(s['current_solutions'][:3])}"
-            lines.append(line)
+            lines.append(f"    {sentiment_str}")
+            if st.get("pain_points"):
+                lines.append(f"    \U0001f4a2 Pain points: {', '.join(st['pain_points'][:3])}")
+            if st.get("current_solutions"):
+                lines.append(f"    \U0001f527 Current solutions: {', '.join(st['current_solutions'][:3])}")
         sections.append("\n".join(lines))
 
-    # ── 3. Reply Timing ──────────────────────────────────────────────
-    t = get_timing_stats()
+    # ── 3. Reply Timing ──
+    t = get_timing_stats(user_id)
     if t.get("total_replies"):
         lines = [
-            f"*3. Reply Timing*",
-            f"Avg: {t['avg_hours']}h | Median: {t['median_hours']}h",
+            f"\u23f0 *Reply Timing*\n{'─' * 30}",
+            f"Avg: *{t['avg_hours']}h*  \u2022  Median: *{t['median_hours']}h*\n",
         ]
+        max_count = max(t["distribution"].values()) if t["distribution"] else 1
         for bucket, count in t["distribution"].items():
-            bar = "=" * count
-            lines.append(f"  {bucket:>6}: {bar} {count}")
+            if count == 0:
+                continue
+            bar_len = round(count / max(max_count, 1) * 8)
+            bar = "\u2588" * max(bar_len, 1)
+            lines.append(f"  `{bucket:>6}` {bar} {count}")
         sections.append("\n".join(lines))
 
-    # ── 4. Subject Line Performance ──────────────────────────────────
-    subjects = get_subject_stats()
+    # ── 4. Subject Lines ──
+    subjects = get_subject_stats(user_id)
     if subjects:
         replied = [s for s in subjects if s["got_reply"]]
         no_reply = [s for s in subjects if not s["got_reply"]]
-        lines = [f"*4. Subject Lines* ({len(replied)}/{len(subjects)} got replies)"]
+        lines = [
+            f"\u2709\ufe0f *Subject Lines* — {len(replied)}/{len(subjects)} got replies\n"
+            f"{'─' * 30}"
+        ]
         for s in replied:
+            emoji = _SENTIMENT_EMOJI.get(s.get("sentiment"), "\u2753")
+            time_str = f"{s['time_to_reply_hours']}h" if s.get("time_to_reply_hours") else "?"
             lines.append(
-                f'  "{s["subject"]}" -> {s["company"]} ({s["industry"]}) '
-                f'| {s.get("sentiment", "?")} | {s.get("time_to_reply_hours", "?")}h'
+                f"  {emoji} \"{s['subject']}\"\n"
+                f"      \u2192 {s['company']} ({s['industry']})  \u2022  {time_str}"
             )
         if no_reply:
-            lines.append(f"  No reply: {len(no_reply)} emails")
+            lines.append(f"\n  \u2b1c No reply: {len(no_reply)} emails")
         sections.append("\n".join(lines))
 
-    # ── 5. Email Length vs Reply Rate ────────────────────────────────
-    length = get_length_stats()
+    # ── 5. Email Length ──
+    length = get_length_stats(user_id)
     if any(v["sent"] > 0 for v in length.values()):
-        lines = ["*5. Email Length vs Reply Rate*"]
+        lines = [f"\U0001f4cf *Email Length vs Reply Rate*\n{'─' * 30}"]
         for bucket, v in length.items():
             if v["sent"] > 0:
-                lines.append(f"  {bucket}: {v['replies']}/{v['sent']} ({v['reply_rate']}%)")
+                pct = v["reply_rate"]
+                bar_len = round(pct / 10)
+                bar = "\u2588" * max(bar_len, 1) if pct > 0 else "\u2581"
+                lines.append(f"  `{bucket:>15}` {bar} {v['replies']}/{v['sent']} ({pct}%)")
         sections.append("\n".join(lines))
 
-    # ── 6. All Reply Details ─────────────────────────────────────────
-    replies = get_all_replies()
+    # ── 6. All Replies ──
+    replies = get_all_replies(user_id)
     if replies:
-        lines = [f"*6. All First Replies* ({len(replies)} total)"]
+        lines = [f"\U0001f4ec *All First Replies* — {len(replies)} total\n{'─' * 30}"]
         for r in replies:
             a = r.get("analysis", {}) or {}
             factors = a.get("company_factors", {}) or {}
-            line = (
-                f"  *{r.get('company_name', '?')}* ({r.get('industry', '?')})\n"
-                f"    From: {r.get('reply_from', '?')} | "
-                f"{a.get('sentiment', '?')} | {a.get('intent', '?')}\n"
-                f"    {r.get('time_to_reply_hours', '?')}h | {a.get('summary', '')}"
+            sentiment = a.get("sentiment", "?")
+            emoji = _SENTIMENT_EMOJI.get(sentiment, "\u2753")
+
+            lines.append(
+                f"\n{emoji} *{r.get('company_name', '?')}* ({r.get('industry', '?')})"
             )
+            lines.append(
+                f"  \U0001f4e8 {r.get('reply_from', '?')}  \u2022  "
+                f"\u23f1\ufe0f {r.get('time_to_reply_hours', '?')}h"
+            )
+            lines.append(
+                f"  \U0001f3af {a.get('sentiment', '?')}  \u2022  "
+                f"\U0001f4ac {a.get('intent', '?')}"
+            )
+            if a.get("reason_summary"):
+                lines.append(f"  \U0001f4cb {a['reason_summary']}")
             if a.get("why_accepted_or_rejected"):
-                line += f"\n    Reason: {a['why_accepted_or_rejected']}"
+                lines.append(f"  \U0001f50d {a['why_accepted_or_rejected']}")
             if a.get("follow_up_advice"):
-                line += f"\n    Follow-up advice: {a['follow_up_advice']}"
+                lines.append(f"  \U0001f4a1 {a['follow_up_advice']}")
+
             factor_parts = []
             if factors.get("size_signal") and factors["size_signal"] != "unknown":
                 factor_parts.append(f"Size: {factors['size_signal']}")
+            if factors.get("pain_point"):
+                factor_parts.append(f"Pain: {factors['pain_point']}")
             if factors.get("current_solution"):
                 factor_parts.append(f"Current: {factors['current_solution']}")
             if factor_parts:
-                line += f"\n    Profile: {' | '.join(factor_parts)}"
-            lines.append(line)
+                lines.append(f"  \U0001f3e2 {' \u2022 '.join(factor_parts)}")
         sections.append("\n".join(lines))
 
     if not sections:
-        return "No data yet. Send some emails first, then use `/ track` to start reply tracking."
+        return "\u2139\ufe0f No data yet. Send some emails first, then use `/ track` to start reply tracking."
 
     return "\n\n".join(sections)

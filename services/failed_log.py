@@ -1,4 +1,4 @@
-"""Failed email log — records pipeline errors and review-discarded emails."""
+"""Failed email log — per-user, records pipeline errors and review-discarded emails."""
 
 import json
 import logging
@@ -6,27 +6,33 @@ import os
 import threading
 import time
 
+from core.user_config import user_data_dir
+
 log = logging.getLogger(__name__)
 
-FAILED_LOG_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "failed_log.json")
 _lock = threading.Lock()
 
 
-def _load() -> list[dict]:
-    if os.path.exists(FAILED_LOG_PATH):
-        with open(FAILED_LOG_PATH, "r", encoding="utf-8") as f:
+def _failed_log_path(user_id: str) -> str:
+    return os.path.join(user_data_dir(user_id), "failed_log.json")
+
+
+def _load(user_id: str) -> list[dict]:
+    path = _failed_log_path(user_id)
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     return []
 
 
-def _save(data: list[dict]):
-    os.makedirs(os.path.dirname(FAILED_LOG_PATH), exist_ok=True)
-    with open(FAILED_LOG_PATH, "w", encoding="utf-8") as f:
+def _save(user_id: str, data: list[dict]):
+    path = _failed_log_path(user_id)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def record_error(company: dict, campaign_id: str, error: str):
-    """Record a company that failed due to API/network errors after all retries."""
+def record_error(user_id: str, company: dict, campaign_id: str, error: str):
     entry = {
         "failure_type": "error",
         "campaign_id": campaign_id,
@@ -37,13 +43,12 @@ def record_error(company: dict, campaign_id: str, error: str):
         "failed_at": time.strftime("%Y-%m-%d %H:%M:%S"),
     }
     with _lock:
-        data = _load()
+        data = _load(user_id)
         data.append(entry)
-        _save(data)
+        _save(user_id, data)
 
 
-def record_discarded(company: dict, campaign_id: str):
-    """Record a company whose email was discarded after failing all review rounds."""
+def record_discarded(user_id: str, company: dict, campaign_id: str):
     entry = {
         "failure_type": "discarded",
         "campaign_id": campaign_id,
@@ -54,11 +59,11 @@ def record_discarded(company: dict, campaign_id: str):
         "failed_at": time.strftime("%Y-%m-%d %H:%M:%S"),
     }
     with _lock:
-        data = _load()
+        data = _load(user_id)
         data.append(entry)
-        _save(data)
+        _save(user_id, data)
 
 
-def get_failed_log() -> list[dict]:
+def get_failed_log(user_id: str) -> list[dict]:
     with _lock:
-        return _load()
+        return _load(user_id)

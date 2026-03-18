@@ -25,9 +25,9 @@ def _get_client() -> OpenAI:
 
 
 # reviewer审核email，返回分数字典
-def review_email(company: dict, subject: str, body: str, campaign_id: str) -> dict:
+def review_email(company: dict, subject: str, body: str, campaign_id: str, user_id: str = "") -> dict:
     # 加载人格
-    system_prompt = build_system_prompt("reviewer")
+    system_prompt = build_system_prompt("reviewer", user_id)
     client = _get_client()
 
     # 我们的要求
@@ -52,7 +52,7 @@ def review_email(company: dict, subject: str, body: str, campaign_id: str) -> di
         response_format={"type": "json_object"},
     )
 
-    usage_tracker.record(campaign_id, "reviewer", resp.usage.prompt_tokens, resp.usage.completion_tokens)
+    usage_tracker.record(user_id, campaign_id, "reviewer", resp.usage.prompt_tokens, resp.usage.completion_tokens)
 
     try:
         # 返回打分字典
