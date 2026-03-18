@@ -224,17 +224,23 @@ def _handle_prospect(user_id: str, text: str, say):
         _handle_prospect_help(say)
         return
 
+    # Extract flags first, then what's left is the query
     depth = None
     depth_match = re.search(r"--depth\s+(\d+)", rest)
     if depth_match:
         depth = int(depth_match.group(1))
-        rest = rest[:depth_match.start()].strip().rstrip(",").strip()
+        rest = rest[:depth_match.start()] + rest[depth_match.end():]
 
-    queries = [q.strip() for q in rest.split(",") if q.strip()]
+    debug = bool(re.search(r"--debug\b", rest))
+    rest = re.sub(r"--debug\b", "", rest)
+
+    rest = rest.strip().strip("|").strip()
+
+    queries = [q.strip() for q in rest.split("|") if q.strip()]
     if not queries:
         _handle_prospect_help(say)
         return
-    t = threading.Thread(target=run_prospect, args=(user_id, queries, say, depth), daemon=True)
+    t = threading.Thread(target=run_prospect, args=(user_id, queries, say, depth, debug), daemon=True)
     t.start()
 
 
@@ -244,12 +250,14 @@ def _handle_prospect_help(say):
         "*Does NOT send emails* — only generates leads.\n"
         "Auto-dedup: skips companies already prospected or contacted.\n\n"
         "*Usage:*\n"
-        "`/ prospect dental clinic in Los Angeles`\n"
-        "`/ prospect dental clinic in LA, auto repair in Houston`\n"
-        "`/ prospect dental clinic in LA --depth 5`\n\n"
+        "`/ prospect dental clinic in Los Angeles, CA`\n"
+        "`/ prospect dental clinic in LA, CA | auto repair in Houston, TX`\n"
+        "`/ prospect dental clinic in LA, CA --depth 5 --debug`\n\n"
         "*Options:*\n"
-        "`--depth N` — scraper scroll depth (default from .env)\n\n"
+        "`--depth N` — scraper scroll depth (default from .env)\n"
+        "`--debug` — show browser window (headful mode)\n\n"
+        "*Note:* Use `|` to separate multiple searches. Commas are fine in city names.\n\n"
         "*Tip:* Use different area names to cover more ground:\n"
-        "`/ prospect dental clinic in Santa Monica`\n"
+        "`/ prospect dental clinic in Santa Monica, CA`\n"
         "`/ prospect dental clinic in Pasadena`\n\n"
         "After CSV appears in Drive, use `/ auto` to start sending.")

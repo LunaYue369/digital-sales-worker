@@ -8,7 +8,8 @@ import time
 
 from services.auth import get_gmail_service
 from services import email_sender
-from core.user_config import user_data_dir
+from services.junk_list import report_bounce
+from core.user_config import user_data_dir, get_user_name
 
 log = logging.getLogger(__name__)
 
@@ -267,6 +268,10 @@ def check_replies(user_id: str) -> list[dict]:
             new_replies.append(record)
             replied_contacts.add(contact_email)
             log.info("New %s reply: %s (%s)", reply_type, from_addr, sent_record.get("company_name", ""))
+
+            # Feed bounces to shared junk list for future filtering
+            if reply_type == "bounce" and contact_email:
+                report_bounce(contact_email, get_user_name(user_id))
             break
 
     if new_replies:

@@ -2,6 +2,7 @@ import base64
 import json
 import logging
 import os
+import random
 import threading
 import time
 from email.mime.text import MIMEText
@@ -51,6 +52,33 @@ def send_email(user_id: str, to: str, subject: str, body: str) -> dict | None:
         return None
 
 
+# Human-like send delay: normal distribution with occasional pauses
+# Target: ~20 emails in ~10 min → ~30s average
+SEND_DELAY_MEAN = float(os.getenv("SEND_DELAY_MEAN", "25"))      # 25s average
+SEND_DELAY_STDDEV = float(os.getenv("SEND_DELAY_STDDEV", "10"))  # 10s std dev
+SEND_DELAY_MIN = float(os.getenv("SEND_DELAY_MIN", "8"))         # floor: 8s
+SEND_DELAY_MAX = float(os.getenv("SEND_DELAY_MAX", "60"))        # cap: 1 min
+SEND_DELAY_BREAK_CHANCE = float(os.getenv("SEND_DELAY_BREAK_CHANCE", "0.05"))  # 5% chance of pause
+SEND_DELAY_BREAK_MIN = float(os.getenv("SEND_DELAY_BREAK_MIN", "60"))    # pause: 1-2 min
+SEND_DELAY_BREAK_MAX = float(os.getenv("SEND_DELAY_BREAK_MAX", "120"))
+
+
+def _human_delay() -> int:
+    """Generate a human-like delay between emails.
+
+    Most delays cluster around 2-4 min (normal distribution).
+    ~10% chance of a longer "break" (5-15 min) simulating distractions.
+    """
+    if random.random() < SEND_DELAY_BREAK_CHANCE:
+        # Long pause — coffee, bathroom, Slack distraction
+        delay = random.uniform(SEND_DELAY_BREAK_MIN, SEND_DELAY_BREAK_MAX)
+    else:
+        # Normal send — writing/reviewing an email
+        delay = random.gauss(SEND_DELAY_MEAN, SEND_DELAY_STDDEV)
+        delay = max(SEND_DELAY_MIN, min(delay, SEND_DELAY_MAX))
+    return int(delay)
+
+
 def send_campaign(user_id: str, emails: list[dict], campaign_id: str) -> dict:
     sent_count = 0
     failed_count = 0
@@ -58,7 +86,13 @@ def send_campaign(user_id: str, emails: list[dict], campaign_id: str) -> dict:
     with _lock:
         sent_log = _load_sent_log(user_id)
 
-        for email in emails:
+        for i, email in enumerate(emails):
+            # Human-like delay between emails
+            if i > 0:
+                delay = _human_delay()
+                log.info("Waiting %ds before next email... (%.1f min)", delay, delay / 60)
+                time.sleep(delay)
+
             result = send_email(user_id, email["contact_email"], email["subject"], email["body"])
             success = result is not None
             record = {

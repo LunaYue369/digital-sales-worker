@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 from services import drive_uploader
-from services.email_finder import find_email, is_placeholder_email
+from services.email_finder import find_email, is_junk_email
 from services.spreadsheet import _load_sent_emails
 from core.user_config import user_data_dir
 
@@ -38,15 +38,16 @@ def _prospect_log_path(user_id: str) -> str:
     return os.path.join(user_data_dir(user_id), "prospect_log.json")
 
 
-def run_prospect(user_id: str, queries: list[str], say, depth: int | None = None):
+def run_prospect(user_id: str, queries: list[str], say, depth: int | None = None, debug: bool = False):
     """One-shot: run scraper → find emails → upload CSV to Drive."""
     say(f"Prospect started with {len(queries)} search queries:\n"
         + "\n".join(f"  • {q}" for q in queries))
 
     # 1. Run gosom scraper
     effective_depth = depth or SCRAPER_DEPTH
-    say(f"Running Google Maps scraper (depth={effective_depth}, this may take a few minutes)...")
-    raw_csv = _run_scraper(user_id, queries, effective_depth)
+    mode = "headful (visible browser)" if debug else "headless"
+    say(f"Running Google Maps scraper (depth={effective_depth}, {mode}, this may take a few minutes)...")
+    raw_csv = _run_scraper(user_id, queries, effective_depth, debug=debug)
     if not raw_csv:
         say("Scraper returned no results.")
         return
@@ -139,7 +140,7 @@ def run_prospect(user_id: str, queries: list[str], say, depth: int | None = None
 
 # ── Scraper ────────────────────────────────────────────────────────────
 
-def _run_scraper(user_id: str, queries: list[str], depth: int) -> str | None:
+def _run_scraper(user_id: str, queries: list[str], depth: int, debug: bool = False) -> str | None:
     """Run gosom scraper, return path to output CSV or None."""
     prospect_dir = _prospect_dir(user_id)
     os.makedirs(prospect_dir, exist_ok=True)
@@ -160,6 +161,8 @@ def _run_scraper(user_id: str, queries: list[str], depth: int) -> str | None:
         "-email",
         "-exit-on-inactivity", "3m",
     ]
+    if debug:
+        cmd.append("-debug")
 
     log.info("Running scraper: %s", " ".join(cmd))
     try:
@@ -190,7 +193,7 @@ def _parse_gosom_csv(csv_path: str) -> list[dict]:
 
             raw_email = (row.get("emails") or "").strip()
             email = raw_email.split(",")[0].strip() if raw_email else ""
-            if is_placeholder_email(email):
+            if is_junk_email(email):
                 email = ""
 
             lead = {
