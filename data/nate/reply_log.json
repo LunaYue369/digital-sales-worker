@@ -1,0 +1,1538 @@
+[
+  {
+    "thread_id": "19cf91f7d51d53d3",
+    "reply_message_id": "19cf9277e4af8af8",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Fantastic Sams",
+    "contact_email": "luna+fantasticsams@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "Are missed calls costing Fantastic Sams bookings?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI appreciate the outreach but this isn't relevant to our business. We don't take phone calls — everything is done through our online portal.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:20 -0700",
+    "reply_epoch": 1773706640.0,
+    "time_to_reply_hours": 0.15,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states that their business does not handle phone calls, as all customer interactions are managed through an online portal, making the AI phone assistant irrelevant to their operations.",
+      "why_accepted_or_rejected": "The rejection is based on a fundamental mismatch between the product's core functionality—handling inbound phone calls—and the prospect's business model, which does not rely on phone communication at all. This makes the solution unnecessary for them.",
+      "follow_up_advice": "Acknowledge their current process and thank them for the clarity. Avoid pushing the phone assistant solution further since it does not align with their business model. Consider researching if they might benefit from other AI solutions related to online portals or digital customer engagement. For future outreach, qualify prospects more carefully by confirming their reliance on phone calls before pitching Telalive.",
+      "improvement_tip": "Include a qualifying question early in the email to confirm if the business handles inbound phone calls, which would help avoid pitching irrelevant solutions. Highlight the product's value specifically for businesses that rely on phone calls to increase relevance. Consider tailoring messaging for businesses that primarily use online portals to explore alternative AI solutions.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "online portal"
+      },
+      "objections": [
+        "We don't take phone calls; everything is done through our online portal."
+      ],
+      "questions_asked": [],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect rejected the AI phone assistant because their business operates exclusively through an online portal and does not handle inbound phone calls, making the product irrelevant to their needs."
+    }
+  },
+  {
+    "thread_id": "19cf91d255befa62",
+    "reply_message_id": "19cf927215e49c57",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "Petfolk",
+    "contact_email": "luna+petfolk@gmic.ai",
+    "industry": "Veterinary",
+    "original_subject": "Are you missing calls = missing revenue at Petfolk?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi Nathan,\n\nWe actually looked into AI phone solutions last year and decided against it. Our customers prefer speaking with a real person, and we had bad experiences with automated systems sounding robotic.\n\nNo thanks,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:16:56 -0500",
+    "reply_epoch": 1773706616.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect explicitly states they have evaluated AI phone solutions previously and chose not to proceed due to customer preference for human interaction and poor experiences with robotic-sounding systems.",
+      "why_accepted_or_rejected": "The rejection is based on prior negative experiences with automated phone systems and a strong preference for live human interaction by their customers. This indicates a fundamental mismatch between Telalive's AI approach and their customer service philosophy.",
+      "follow_up_advice": "Acknowledge their past experience and emphasize Telalive's natural language capabilities and multi-language support that reduce robotic impressions. Suggest a brief demo or pilot to showcase how Telalive differs from traditional automated systems. Avoid pushing too hard but keep the door open for future conversations if their needs evolve.",
+      "improvement_tip": "Address common objections about robotic voice quality upfront in the initial email to preempt this concern. Include a brief mention of Telalive's advanced natural language understanding and human-like interaction to differentiate from past negative experiences. Highlight customer satisfaction or testimonials to build trust.",
+      "company_factors": {
+        "industry": "Veterinary",
+        "size_signal": "unknown",
+        "pain_point": "customers prefer speaking with a real person",
+        "current_solution": "rejected AI phone solutions previously"
+      },
+      "objections": [
+        "Customers prefer speaking with a real person",
+        "Bad experiences with automated systems sounding robotic"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "Petfolk is not interested in AI phone solutions due to prior negative experiences and a preference for human interaction by their customers."
+    }
+  },
+  {
+    "thread_id": "19cf91f7c502f3b5",
+    "reply_message_id": "19cf92779a3a899d",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Hand & Stone",
+    "contact_email": "luna+handstone@gmic.ai",
+    "industry": "Wellness",
+    "original_subject": "How Hand & Stone can stop missing calls (and revenue)",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hello Nathan,\n\nI've been meaning to find an AI solution for our phone lines. We get a lot of appointment requests after 5pm. Does Telalive integrate with Google Calendar or any scheduling tools?\n\nLooking forward to hearing from you,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:19 -0700",
+    "reply_epoch": 1773706639.0,
+    "time_to_reply_hours": 0.15,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in AI phone solutions due to after-hours appointment requests and specifically asks about integration with Google Calendar or scheduling tools, indicating a desire to understand product compatibility.",
+      "why_accepted_or_rejected": "The prospect's mention of after-hours appointment requests aligns with Telalive's strengths, showing they see value in the product. Their question about integration suggests they are evaluating fit with existing systems, a positive buying signal rather than rejection.",
+      "follow_up_advice": "Respond promptly with detailed information about Telalive's integration capabilities, especially with Google Calendar and popular scheduling platforms. Highlight how seamless integration can automate appointment booking and reduce manual work. Offer to schedule a demo or pilot to showcase these features in action.",
+      "improvement_tip": "Future emails should emphasize Telalive's integration with common scheduling tools upfront, as this is a key concern for prospects managing appointments. Including a brief mention of Google Calendar or similar platforms in the initial email could increase engagement from businesses reliant on scheduling.",
+      "company_factors": {
+        "industry": "wellness",
+        "size_signal": "unknown",
+        "pain_point": "after-hours appointment requests",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Does Telalive integrate with Google Calendar or any scheduling tools?"
+      ],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The prospect is interested in AI phone solutions for after-hours appointment handling and wants to know about integration with scheduling tools, indicating potential fit and a next step opportunity."
+    }
+  },
+  {
+    "thread_id": "19cf91d202e7c80f",
+    "reply_message_id": "19cf92710d1ad10f",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "MedExpress",
+    "contact_email": "luna+medexpress@gmic.ai",
+    "industry": "Healthcare",
+    "original_subject": "Are patient calls slipping through the cracks at MedExpress?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi,\n\nThanks but we're not interested. We already use Ruby Receptionists and are happy with them. Please remove me from your mailing list.\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:16:53 -0500",
+    "reply_epoch": 1773706613.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect is not interested because they already use a competitor, Ruby Receptionists, and are satisfied with their current solution. They also requested removal from the mailing list, indicating no desire for further contact.",
+      "why_accepted_or_rejected": "The prospect explicitly states satisfaction with their existing provider, Ruby Receptionists, which directly addresses the core offering of Telalive. This prior commitment and contentment with a competitor led to a clear rejection. Additionally, the request to be removed from the mailing list shows a firm decision to disengage.",
+      "follow_up_advice": "Respect the prospect's request to unsubscribe immediately to maintain professionalism and compliance. Avoid pushing further since they are satisfied with a competitor. In future outreach, consider researching if the prospect is already using a similar service to tailor messaging or avoid wasting effort. Highlighting unique differentiators compared to known competitors like Ruby Receptionists might help if re-engaging later.",
+      "improvement_tip": "Include a brief qualification step or question in the initial email to identify if the prospect already uses a similar service. This can prevent negative responses and improve targeting. Also, mention unique features or pricing advantages compared to well-known competitors like Ruby Receptionists to spark interest.",
+      "company_factors": {
+        "industry": "Healthcare",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "Ruby Receptionists"
+      },
+      "objections": [
+        "Already using Ruby Receptionists and satisfied"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The prospect rejected the offer due to satisfaction with their current competitor Ruby Receptionists and requested removal from the mailing list."
+    }
+  },
+  {
+    "thread_id": "19cf91d223dc7feb",
+    "reply_message_id": "19cf9271b6e32ee8",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "Banfield Pet Hospital",
+    "contact_email": "luna+banfield@gmic.ai",
+    "industry": "Veterinary",
+    "original_subject": "How Banfield can never miss a pet care call",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hello Nathan,\n\nI've been meaning to find an AI solution for our phone lines. We get a lot of appointment requests after 5pm. Does Telalive integrate with Google Calendar or any scheduling tools?\n\nLooking forward to hearing from you,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:16:55 -0700",
+    "reply_epoch": 1773706615.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in AI phone solutions due to after-hours appointment requests and inquires specifically about integration with Google Calendar or scheduling tools.",
+      "why_accepted_or_rejected": "The prospect's mention of after-hours appointment requests aligns directly with Telalive's strength in 24/7 call handling. Their question about integration indicates they are considering how Telalive would fit into their existing workflow, showing genuine engagement rather than rejection or neutrality.",
+      "follow_up_advice": "Respond promptly by confirming Telalive's integration capabilities with popular scheduling tools, including Google Calendar if applicable. Provide examples or documentation links to build confidence. Emphasize how Telalive can automate after-hours appointment bookings seamlessly, reducing missed calls and manual entry.",
+      "improvement_tip": "Future emails should highlight Telalive's integration with common scheduling platforms upfront, as this is a key concern for prospects managing appointments. Including a brief mention of Google Calendar or similar tools in the initial email may increase engagement from businesses like veterinary clinics.",
+      "company_factors": {
+        "industry": "Veterinary",
+        "size_signal": "medium",
+        "pain_point": "after-hours appointment requests",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Does Telalive integrate with Google Calendar or any scheduling tools?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The veterinary clinic is interested in AI phone solutions to handle after-hours appointment calls and wants to know if Telalive integrates with their scheduling tools."
+    }
+  },
+  {
+    "thread_id": "19cf91e75a3eca9d",
+    "reply_message_id": "19cf92744a4b4c6e",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "Sylvan Learning",
+    "contact_email": "luna+sylvan@gmic.ai",
+    "industry": "Education",
+    "original_subject": "Are missed calls costing Sylvan Learning enrollments?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi there,\n\nI'm definitely interested in learning more about Telalive. We're a small team and can't always answer the phone. Can you tell me more about how the AI handles complex questions from callers?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:06 -0500",
+    "reply_epoch": 1773706626.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in Telalive due to their small team size and difficulty answering all calls. They want more details on how the AI manages complex caller questions before proceeding.",
+      "why_accepted_or_rejected": "The prospect is intrigued by the potential to handle missed calls and is motivated by their current challenge of limited staff availability. Their question about handling complex queries shows they are evaluating the AI's capabilities to ensure it meets their needs.",
+      "follow_up_advice": "Respond with a detailed explanation of Telalive's natural language understanding and ability to handle complex caller intents, including examples relevant to education services. Highlight the seamless handoff to human agents for queries beyond AI scope. Offer to schedule a demo or pilot to showcase real-world performance.",
+      "improvement_tip": "Include a brief mention in the initial email about Telalive's ability to handle complex questions and escalate to human staff when needed. This could preempt such questions and build confidence upfront.",
+      "company_factors": {
+        "industry": "Education",
+        "size_signal": "small",
+        "pain_point": "small team can't always answer phone",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Can you tell me more about how the AI handles complex questions from callers?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "A small education company is interested in Telalive but wants more info on AI handling complex calls before moving forward."
+    }
+  },
+  {
+    "thread_id": "19cf91e7176aad85",
+    "reply_message_id": "19cf9273a360b423",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "Mathnasium",
+    "contact_email": "luna+mathnasium@gmic.ai",
+    "industry": "Education",
+    "original_subject": "Missing calls across 1000+ centers?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi Nathan,\n\nThanks for your email. I'll forward this to our operations manager — she handles our phone systems. Her name is Sarah Chen.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:03 -0500",
+    "reply_epoch": 1773706623.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "referring_to_colleague",
+      "reason_summary": "The respondent is not the decision maker for phone systems and is forwarding the email to the operations manager, indicating potential interest but deferring the decision.",
+      "why_accepted_or_rejected": "The reply neither accepts nor rejects the offer but redirects the conversation to the relevant person, showing procedural handling rather than direct engagement or rejection.",
+      "follow_up_advice": "Follow up with Sarah Chen directly referencing this referral to maintain momentum. In your next message, briefly restate the value proposition tailored to operations management concerns, such as call handling efficiency and cost savings. Keep the tone helpful and concise to encourage a response from the new contact.",
+      "improvement_tip": "Include a clear call to action that invites forwarding to the relevant decision maker, as this reply shows the importance of facilitating internal referrals. Also, consider adding a sentence that highlights who typically benefits from Telalive within an organization to prompt direct engagement from the right person.",
+      "company_factors": {
+        "industry": "Education",
+        "size_signal": "large",
+        "pain_point": "missing calls",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": {
+        "name": "Sarah Chen",
+        "email": "",
+        "title": "Operations Manager"
+      },
+      "summary": "The initial contact is not the decision maker but has referred the email to the operations manager, indicating a potential lead that requires follow-up with the referred person."
+    }
+  },
+  {
+    "thread_id": "19cf91d1f24fafde",
+    "reply_message_id": "19cf92707669e1d0",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "Concentra",
+    "contact_email": "luna+concentra@gmic.ai",
+    "industry": "Healthcare",
+    "original_subject": "How Concentra can never miss a patient call again",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi,\n\nInteresting concept. I need to discuss this with my team first. Can you send me some case studies or testimonials from businesses similar to ours?\n\nThanks,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:16:50 -0500",
+    "reply_epoch": 1773706610.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "requesting_info",
+      "reason_summary": "The prospect expresses interest in the AI phone assistant concept but wants to consult their team before proceeding. They request case studies or testimonials from similar healthcare businesses to evaluate relevance and effectiveness.",
+      "why_accepted_or_rejected": "The prospect did not reject the offer but showed cautious interest, indicating a need for social proof and validation from comparable healthcare clients. Their request for case studies suggests they want to see proven results before making a decision.",
+      "follow_up_advice": "Provide targeted case studies and testimonials specifically from healthcare providers or clinics that have benefited from Telalive. Highlight measurable improvements such as reduced missed calls and increased patient bookings. Offer to schedule a follow-up call to address any questions after their team review.",
+      "improvement_tip": "Include a brief mention or link to relevant healthcare case studies or testimonials in the initial email to preempt such requests and build credibility upfront. Emphasize proven success in healthcare to increase trust and reduce friction.",
+      "company_factors": {
+        "industry": "Healthcare",
+        "size_signal": "medium",
+        "pain_point": "missing patient calls",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Can you send me some case studies or testimonials from businesses similar to ours?"
+      ],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The healthcare prospect is interested but cautious, requesting case studies to validate Telalive's effectiveness before discussing internally."
+    }
+  },
+  {
+    "thread_id": "19cf91e70693ddac",
+    "reply_message_id": "19cf9273490c1f01",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "Kumon",
+    "contact_email": "luna+kumon@gmic.ai",
+    "industry": "Education",
+    "original_subject": "How Kumon can capture every parent call worldwide",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Thanks for the info. We might revisit this next quarter when our budget cycle resets. I'll keep your details on file.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:02 -0700",
+    "reply_epoch": 1773706622.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "just_acknowledging",
+      "reason_summary": "The prospect acknowledges the information but indicates that budget timing is the main factor delaying consideration. They are not rejecting outright but deferring engagement until the next budget cycle.",
+      "why_accepted_or_rejected": "The prospect did not express interest or objections but mentioned budget cycle timing as the reason for postponing evaluation. This suggests they see potential value but cannot commit now due to financial planning constraints.",
+      "follow_up_advice": "Respect the prospect's timeline and plan a polite follow-up near the next quarter's start to check in on budget availability. Meanwhile, consider sending occasional value-added content or case studies to keep Telalive top of mind without being intrusive.",
+      "improvement_tip": "Since budget timing is a key factor, future emails could explicitly acknowledge common budget cycles and offer to schedule a follow-up at a convenient time. Including a brief mention of flexible pricing or pilot programs might also reduce hesitation.",
+      "company_factors": {
+        "industry": "Education",
+        "size_signal": "large",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect acknowledges the email but defers consideration until their next budget cycle, keeping contact details for future reference."
+    }
+  },
+  {
+    "thread_id": "19cf91f7f50d66ad",
+    "reply_message_id": "19cf92789efef27e",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Insomnia Cookies",
+    "contact_email": "luna+insomnia@gmic.ai",
+    "industry": "Food",
+    "original_subject": "Are late-night calls slipping through the cracks?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi there,\n\nI'm definitely interested in learning more about Telalive. We're a small team and can't always answer the phone. Can you tell me more about how the AI handles complex questions from callers?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:23 -0700",
+    "reply_epoch": 1773706643.0,
+    "time_to_reply_hours": 0.15,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest due to their small team size and inability to always answer calls, and requests more information about how Telalive manages complex caller questions.",
+      "why_accepted_or_rejected": "The prospect is intrigued by the potential to handle missed calls with an AI assistant, especially given their small team constraints. Their request for details on handling complex questions indicates they are evaluating the solution's sophistication and fit for their needs.",
+      "follow_up_advice": "Respond promptly with a detailed explanation of Telalive's natural language understanding capabilities and examples of how it manages complex inquiries. Highlight the seamless handoff to human staff when needed to reassure them about handling nuanced calls. Emphasize the ease of setup and integration to reduce perceived barriers.",
+      "improvement_tip": "Future emails could include a brief mention of Telalive's ability to handle complex questions and escalate to humans, as this was a key concern for the prospect. Also, referencing small team challenges explicitly may increase engagement.",
+      "company_factors": {
+        "industry": "Food",
+        "size_signal": "small",
+        "pain_point": "small team can't always answer phone",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Can you tell me more about how the AI handles complex questions from callers?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "A small food industry prospect is interested in Telalive but wants to understand how it manages complex caller questions before proceeding."
+    }
+  },
+  {
+    "thread_id": "19cf91e79732e604",
+    "reply_message_id": "19cf92758a2569c5",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "Plato's Closet",
+    "contact_email": "luna+platoscloset@gmic.ai",
+    "industry": "Retail",
+    "original_subject": "How Plato’s Closet can never miss a call again",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi Nathan,\n\nThanks for your email. I'll forward this to our operations manager — she handles our phone systems. Her name is Sarah Chen.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:11 -0500",
+    "reply_epoch": 1773706631.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "referring_to_colleague",
+      "reason_summary": "The recipient is not the decision maker for phone systems and is forwarding the email to the appropriate operations manager, Sarah Chen.",
+      "why_accepted_or_rejected": "The reply neither accepts nor rejects the offer but indicates the sender reached someone who recognizes the correct contact for the product. This shows some level of engagement but defers decision-making to another person.",
+      "follow_up_advice": "Follow up with Sarah Chen directly, referencing this referral to maintain continuity. In your next message, briefly summarize the value proposition and how Telalive can specifically help Plato's Closet avoid missed calls and lost sales. Mention the ease of setup and cost savings to capture interest.",
+      "improvement_tip": "Include a clear call to action asking if you can connect with the person responsible for phone systems to reduce referral delays. Also, personalize the email more with details about the retail industry to increase relevance and response quality.",
+      "company_factors": {
+        "industry": "Retail",
+        "size_signal": "medium",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": {
+        "name": "Sarah Chen",
+        "email": "",
+        "title": "Operations Manager"
+      },
+      "summary": "The recipient is not the decision maker and has forwarded the email to the operations manager, indicating a potential lead but requiring follow-up with the referred contact."
+    }
+  },
+  {
+    "thread_id": "19cf91d263ddd265",
+    "reply_message_id": "19cf927241675f02",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "Camp Bow Wow",
+    "contact_email": "luna+campbowwow@gmic.ai",
+    "industry": "Pet Services",
+    "original_subject": "How do you handle calls across 220+ locations?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI'm not sure if this is the right fit but I'm not saying no either. What kind of businesses typically use Telalive? Do you have experience with our industry specifically?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:16:58 -0500",
+    "reply_epoch": 1773706618.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "asking_question",
+      "reason_summary": "The prospect is uncertain about the fit of Telalive for their business and is seeking clarification on the typical customer profile and industry experience before making a decision.",
+      "why_accepted_or_rejected": "The prospect did not reject the offer outright but expressed hesitation and requested more information about the types of businesses that use Telalive and whether there is relevant experience in the pet services industry. This indicates openness but a need for reassurance and tailored information.",
+      "follow_up_advice": "Respond by highlighting Telalive's versatility across various industries, emphasizing any relevant experience with pet services or similar multi-location businesses. Provide examples or case studies if available, and reassure them about Telalive's ease of integration and benefits specific to their sector. Invite them to a brief call or demo to address their concerns directly.",
+      "improvement_tip": "Include industry-specific examples or testimonials in the initial email to preemptively address doubts about fit. Also, briefly mention the range of industries served to build credibility and relevance early on.",
+      "company_factors": {
+        "industry": "Pet Services",
+        "size_signal": "medium",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "What kind of businesses typically use Telalive?",
+        "Do you have experience with our industry specifically?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is cautiously interested but needs reassurance about Telalive's applicability to pet services and multi-location businesses before proceeding."
+    }
+  },
+  {
+    "thread_id": "19cf91e72f2ee945",
+    "reply_message_id": "19cf9273fa8ef360",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "Huntington Learning Centers",
+    "contact_email": "luna+huntington@gmic.ai",
+    "industry": "Education",
+    "original_subject": "Are missed calls slowing down new enrollments?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI'm not sure if this is the right fit but I'm not saying no either. What kind of businesses typically use Telalive? Do you have experience with our industry specifically?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:04 -0500",
+    "reply_epoch": 1773706624.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "asking_question",
+      "reason_summary": "The prospect is uncertain about the fit of Telalive for their education business and is seeking clarification about typical users and industry experience before making a decision.",
+      "why_accepted_or_rejected": "The prospect neither accepted nor rejected the offer but expressed hesitation and requested more information about the product's applicability to education businesses, indicating openness but needing reassurance.",
+      "follow_up_advice": "Respond by highlighting Telalive's success with education centers or similar service-based businesses, emphasizing how it handles appointment bookings and inquiries relevant to education. Provide examples or case studies if available to build confidence. Clarify how Telalive can specifically help Huntington Learning Centers improve enrollment calls.",
+      "improvement_tip": "Include industry-specific examples or testimonials in the initial email to preempt such questions. Clearly state the types of businesses that benefit most from Telalive, especially those in education or similar sectors, to reduce hesitation.",
+      "company_factors": {
+        "industry": "Education",
+        "size_signal": "medium",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "What kind of businesses typically use Telalive?",
+        "Do you have experience with our industry specifically?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is cautiously open but requests more information about Telalive's relevance to education businesses before proceeding."
+    }
+  },
+  {
+    "thread_id": "19cf91f77d87c2e9",
+    "reply_message_id": "19cf92764a109133",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Ulta Beauty",
+    "contact_email": "luna+ulta@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "Are missed salon calls costing Ulta Beauty revenue?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi there,\n\nI'm definitely interested in learning more about Telalive. We're a small team and can't always answer the phone. Can you tell me more about how the AI handles complex questions from callers?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:14 -0700",
+    "reply_epoch": 1773706634.0,
+    "time_to_reply_hours": 0.14,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in Telalive due to their small team size and difficulty answering all calls, and requests more information about how the AI handles complex caller questions.",
+      "why_accepted_or_rejected": "The prospect is intrigued by the potential of Telalive to alleviate their call handling burden, especially given their small team constraints. Their question about handling complex inquiries shows they are evaluating the AI's capabilities and suitability for their needs.",
+      "follow_up_advice": "Respond promptly with a detailed explanation of Telalive's natural language understanding capabilities and how it manages complex caller intents, including examples or case studies if possible. Emphasize the seamless handoff to human staff when needed to reassure them about handling difficult calls. Offer to schedule a demo or call to address any further questions.",
+      "improvement_tip": "Since the prospect responded positively to the mention of small team challenges, future emails should highlight how Telalive supports small teams specifically. Also, proactively address common concerns about AI handling complex questions by including brief examples or assurances in the initial email.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "small",
+        "pain_point": "small team can't always answer phone",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Can you tell me more about how the AI handles complex questions from callers?"
+      ],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "A small team beauty business is interested in Telalive but wants more details on how the AI manages complex caller questions before proceeding."
+    }
+  },
+  {
+    "thread_id": "19cf91d1d326b118",
+    "reply_message_id": "19cf92702d42489f",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "Heartland Dental",
+    "contact_email": "luna+heartland@gmic.ai",
+    "industry": "Healthcare",
+    "original_subject": "How’s Heartland Dental handling all those patient calls?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Not interested. We handle all calls in-house and have no plans to change that.\n\nDo not email me again.",
+    "reply_date": "Mon, 16 Mar 2026 19:16:49 -0500",
+    "reply_epoch": 1773706609.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states they currently manage all calls internally and have no intention to switch, explicitly requesting no further contact.",
+      "why_accepted_or_rejected": "The rejection is firm and based on their satisfaction with the current in-house call handling process. The explicit request to stop emailing indicates a strong preference against unsolicited sales outreach.",
+      "follow_up_advice": "Respect the prospect's request and remove them from the mailing list immediately to maintain compliance and goodwill. Avoid pushing further or attempting to counter their stated position. Consider refining targeting criteria to exclude companies that explicitly manage calls in-house.",
+      "improvement_tip": "Include a qualifying question early in the email to identify prospects who already handle calls internally, reducing negative responses. Also, add a clear opt-out option in initial outreach to respect recipients' preferences.",
+      "company_factors": {
+        "industry": "Healthcare",
+        "size_signal": "large",
+        "pain_point": null,
+        "current_solution": "in-house call handling"
+      },
+      "objections": [
+        "We handle all calls in-house",
+        "No plans to change"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "Heartland Dental is not interested in Telalive as they manage calls internally and explicitly requested no further emails."
+    }
+  },
+  {
+    "thread_id": "19cf91f773cfcf8d",
+    "reply_message_id": "19cf9275e38175b4",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Supercuts",
+    "contact_email": "luna+supercuts@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "What if every Supercuts call booked a customer?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Thanks for the info. We might revisit this next quarter when our budget cycle resets. I'll keep your details on file.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:12 -0500",
+    "reply_epoch": 1773706632.0,
+    "time_to_reply_hours": 0.14,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "not_interested",
+      "reason_summary": "The prospect acknowledges the information but indicates that they are not currently considering the product due to budget timing. They express potential future interest but no immediate engagement.",
+      "why_accepted_or_rejected": "The prospect is not rejecting the product outright but defers the decision until their budget cycle resets next quarter. This suggests budget constraints or timing issues rather than dissatisfaction with the product.",
+      "follow_up_advice": "Respect the prospect's timeline and plan a polite follow-up near the start of their next budget cycle. In the meantime, consider sending occasional value-add content or case studies relevant to beauty salons to keep Telalive top of mind without being intrusive.",
+      "improvement_tip": "Since the prospect is deferring due to budget timing, future emails could emphasize flexible pricing plans or pilot programs that minimize upfront commitment. Highlighting ROI or cost savings compared to current staffing costs might also prompt earlier engagement.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "medium",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is not currently interested due to budget timing but may reconsider next quarter. They have kept the contact details for future reference."
+    }
+  },
+  {
+    "thread_id": "19cf91f797f4e767",
+    "reply_message_id": "19cf92769c6cfc58",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Great Clips",
+    "contact_email": "luna+greatclips@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "What if no Great Clips call ever went unanswered?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI appreciate the outreach but this isn't relevant to our business. We don't take phone calls — everything is done through our online portal.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:15 -0500",
+    "reply_epoch": 1773706635.0,
+    "time_to_reply_hours": 0.14,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states that their business does not handle phone calls, making the AI phone assistant irrelevant to their operations.",
+      "why_accepted_or_rejected": "The rejection is based on a fundamental mismatch between the product's core function—handling inbound phone calls—and the prospect's business model, which relies exclusively on an online portal for customer interactions. This eliminates the need for a phone answering solution.",
+      "follow_up_advice": "Respect the prospect's business model and avoid pushing further on phone call solutions. Instead, consider researching if GMIC AI offers or could develop AI solutions tailored to online portals or chat-based customer service. For this contact, no follow-up on Telalive is recommended.",
+      "improvement_tip": "In future cold emails, include a qualifying question or statement early on to confirm the prospect handles inbound phone calls. This can prevent outreach to businesses that do not use phone communication, improving response relevance and efficiency.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "online portal"
+      },
+      "objections": [
+        "We don't take phone calls — everything is done through our online portal."
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The prospect rejected the offer because their business does not use phone calls, making the AI phone assistant irrelevant."
+    }
+  },
+  {
+    "thread_id": "19cf91e775f82bd1",
+    "reply_message_id": "19cf9274fc114c8f",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "CPR Cell Phone Repair",
+    "contact_email": "luna+cpr@gmic.ai",
+    "industry": "Tech Services",
+    "original_subject": "Are missed calls costing CPR Cell Phone Repair customers?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hey Nathan,\n\nI saw your email about Telalive. We actually just lost a big client because we missed their after-hours call. Would love to set up a demo. Are you available this week?\n\nCheers,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:08 -0500",
+    "reply_epoch": 1773706628.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "interested",
+      "reason_summary": "The prospect expressed interest in Telalive after sharing a recent pain point about losing a client due to missed after-hours calls and requested a demo.",
+      "why_accepted_or_rejected": "The prospect's direct mention of losing a client from a missed after-hours call aligns perfectly with Telalive's core value proposition of capturing calls 24/7. This real pain point motivated them to seek a demo promptly.",
+      "follow_up_advice": "Respond promptly to schedule the demo this week as requested, emphasizing how Telalive can prevent missed after-hours calls and client loss. Highlight the quick setup and ease of integration to reassure them. Also, prepare to tailor the demo to their specific industry and pain point.",
+      "improvement_tip": "Including a question about after-hours call handling in the initial email could increase engagement, as this prospect responded strongly to that pain point. Emphasizing real client loss scenarios in the email copy may also boost reply rates.",
+      "company_factors": {
+        "industry": "Tech Services",
+        "size_signal": "unknown",
+        "pain_point": "missed after-hours calls causing client loss",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Are you available this week?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is interested due to a recent client loss from missed after-hours calls and wants to schedule a demo promptly."
+    }
+  },
+  {
+    "thread_id": "19cf91e744b4ba28",
+    "reply_message_id": "19cf9274b19f7138",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "Batteries Plus",
+    "contact_email": "luna+batteriesplus@gmic.ai",
+    "industry": "Retail",
+    "original_subject": "Are missed calls costing Batteries Plus revenue?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI'm not sure if this is the right fit but I'm not saying no either. What kind of businesses typically use Telalive? Do you have experience with our industry specifically?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:07 -0500",
+    "reply_epoch": 1773706627.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "asking_question",
+      "reason_summary": "The prospect is uncertain about the fit of Telalive for their retail business and is seeking clarification on typical users and industry experience before making a decision.",
+      "why_accepted_or_rejected": "The prospect did not reject the offer outright but expressed hesitation and requested more information about the product's applicability to their industry, indicating openness but needing reassurance.",
+      "follow_up_advice": "Respond with examples of retail businesses successfully using Telalive, emphasizing relevant use cases like handling high inbound call volumes and after-hours calls. Highlight any specific retail clients or case studies if available. Address their concern directly by explaining how Telalive adapts to retail needs and mention multi-language support if relevant. This will help build confidence and move the conversation forward.",
+      "improvement_tip": "Include industry-specific examples or testimonials in the initial email to preempt such questions. Clearly state which industries Telalive serves, especially retail, to reduce hesitation. Also, briefly mention how Telalive addresses common retail pain points like missed calls and order intake.",
+      "company_factors": {
+        "industry": "Retail",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "What kind of businesses typically use Telalive?",
+        "Do you have experience with our industry specifically?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is cautiously interested but wants to know if Telalive fits retail businesses and if there is relevant experience before proceeding."
+    }
+  },
+  {
+    "thread_id": "19cf91e6f4b55797",
+    "reply_message_id": "19cf92731160dd06",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "Jackson Hewitt",
+    "contact_email": "luna+jacksonhewitt@gmic.ai",
+    "industry": "Finance",
+    "original_subject": "How Jackson Hewitt can stop missing calls this tax season",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hello Nathan,\n\nI've been meaning to find an AI solution for our phone lines. We get a lot of appointment requests after 5pm. Does Telalive integrate with Google Calendar or any scheduling tools?\n\nLooking forward to hearing from you,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:00 -0700",
+    "reply_epoch": 1773706620.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses interest in AI phone solutions due to after-hours appointment requests and inquires about integration with Google Calendar or scheduling tools, indicating a potential fit for Telalive.",
+      "why_accepted_or_rejected": "The prospect is positively engaged because they have a clear pain point—handling appointment requests after hours—and are exploring whether Telalive can integrate with their existing scheduling systems, which is crucial for seamless adoption.",
+      "follow_up_advice": "Respond promptly by confirming Telalive's integration capabilities with Google Calendar and other popular scheduling platforms. Provide examples or case studies if available, and offer to set up a demo or pilot to showcase how Telalive can automate after-hours appointment booking effectively.",
+      "improvement_tip": "Highlight integration features more explicitly in the initial email, especially for industries like finance where appointment scheduling is critical. Including a brief mention of Google Calendar or common scheduling tools could preempt such questions and increase engagement.",
+      "company_factors": {
+        "industry": "Finance",
+        "size_signal": "medium",
+        "pain_point": "appointment requests after hours",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Does Telalive integrate with Google Calendar or any scheduling tools?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is interested in Telalive to handle after-hours appointment requests and wants to know about integration with scheduling tools, indicating a good opportunity for follow-up."
+    }
+  },
+  {
+    "thread_id": "19cf91f7f7215c82",
+    "reply_message_id": "19cf92782fe3fe6c",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Crumbl Cookies",
+    "contact_email": "luna+crumbl@gmic.ai",
+    "industry": "Food",
+    "original_subject": "How do you handle surges in calls across 900+ locations?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI appreciate the outreach but this isn't relevant to our business. We don't take phone calls — everything is done through our online portal.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:22 -0500",
+    "reply_epoch": 1773706642.0,
+    "time_to_reply_hours": 0.15,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states that their business does not handle phone calls, making the AI phone assistant irrelevant to their operations.",
+      "why_accepted_or_rejected": "The rejection is based on a fundamental mismatch between the product's core function—handling inbound phone calls—and the prospect's business model, which relies solely on an online portal for customer interactions. This eliminates the need for a phone assistant solution.",
+      "follow_up_advice": "Acknowledge their business model and thank them for the clarity. Avoid pushing further on phone call solutions for businesses that operate exclusively online. Instead, consider researching whether GMIC AI offers or could develop AI solutions tailored to online customer service channels to approach similar prospects in the future.",
+      "improvement_tip": "Include a qualifying question early in the email to confirm if the prospect handles inbound phone calls. This can prevent outreach to businesses that do not use phone communication, improving targeting efficiency and response relevance.",
+      "company_factors": {
+        "industry": "Food",
+        "size_signal": "large",
+        "pain_point": null,
+        "current_solution": "online portal"
+      },
+      "objections": [
+        "We don't take phone calls — everything is done through our online portal."
+      ],
+      "questions_asked": [],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect rejected the email because their business does not use phone calls, making the AI phone assistant irrelevant."
+    }
+  },
+  {
+    "thread_id": "19cf91d1d2262a1c",
+    "reply_message_id": "19cf926fdfa9b56c",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "Comfort Dental",
+    "contact_email": "luna+comfortdental@gmic.ai",
+    "industry": "Healthcare",
+    "original_subject": "Are missed calls costing Comfort Dental appointments?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI appreciate the outreach but this isn't relevant to our business. We don't take phone calls — everything is done through our online portal.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:16:47 -0700",
+    "reply_epoch": 1773706607.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states that their business does not handle phone calls, relying entirely on an online portal, making the Telalive phone assistant irrelevant to their operations.",
+      "why_accepted_or_rejected": "The rejection is based on a fundamental mismatch between the product's core function—handling inbound phone calls—and the prospect's current business process, which excludes phone calls altogether. This eliminates any need for an AI phone assistant.",
+      "follow_up_advice": "Acknowledge their current process and thank them for the clarity. Avoid pushing further on phone call solutions for this prospect. Instead, consider researching if they might benefit from other AI solutions that integrate with online portals. For future outreach, qualify prospects more carefully to ensure they handle inbound calls before pitching Telalive.",
+      "improvement_tip": "Include a qualifying question early in the email to confirm if the business handles inbound phone calls. This can prevent wasted effort on prospects who exclusively use online portals. Also, tailor messaging to highlight benefits for businesses that rely on phone communication to increase relevance.",
+      "company_factors": {
+        "industry": "Healthcare",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "online portal"
+      },
+      "objections": [
+        "We don't take phone calls; everything is done through our online portal."
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The prospect rejects the offer because their business does not use phone calls, relying solely on an online portal, making the AI phone assistant irrelevant."
+    }
+  },
+  {
+    "thread_id": "19cf91d1bd38dd69",
+    "reply_message_id": "19cf926f6e84cce1",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "Aspen Dental",
+    "contact_email": "luna+aspendental@gmic.ai",
+    "industry": "Healthcare",
+    "original_subject": "How Aspen Dental can stop missing urgent patient calls",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hey,\n\nWe're a two-person shop and we literally get maybe 3 calls a day. This is way overkill for us. Also $39/month for something we barely need isn't worth it.\n\nThanks anyway,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:16:46 -0700",
+    "reply_epoch": 1773706606.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect indicates their business is very small with minimal call volume, making the product unnecessary and not cost-effective for their needs.",
+      "why_accepted_or_rejected": "The prospect explicitly states that their call volume is very low (about 3 calls per day) and that the $39/month starting price is not justified given their limited need. This shows a clear rejection based on perceived lack of fit and cost concerns.",
+      "follow_up_advice": "Acknowledge the small size and low call volume of their business in any follow-up, and consider suggesting a more tailored or lower-cost solution if available. Emphasize flexibility and potential benefits even for very small operations, or politely confirm that they are not a good fit at this time to avoid wasting effort.",
+      "improvement_tip": "Future emails should better qualify the prospect's business size and call volume early on to avoid pitching to very small operations that see the product as overkill. Including a question about call volume or business size in the initial outreach could improve targeting and response quality.",
+      "company_factors": {
+        "industry": "Healthcare",
+        "size_signal": "small",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [
+        "Too expensive for low call volume",
+        "Product is overkill for very small business"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "Aspen Dental is a very small operation with minimal calls, so they see Telalive as unnecessary and too costly, leading to a clear rejection."
+    }
+  },
+  {
+    "thread_id": "19cf91d212366fc1",
+    "reply_message_id": "19cf9270d337a9c6",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "AFC Urgent Care",
+    "contact_email": "luna+afc@gmic.ai",
+    "industry": "Healthcare",
+    "original_subject": "Are urgent patient calls slipping through the cracks?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Not interested. We handle all calls in-house and have no plans to change that.\n\nDo not email me again.",
+    "reply_date": "Mon, 16 Mar 2026 17:16:51 -0700",
+    "reply_epoch": 1773706611.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states they are not interested because they currently handle all calls internally and do not plan to change their process. They also request no further emails.",
+      "why_accepted_or_rejected": "The rejection is firm and based on their satisfaction with their existing in-house call handling system. The explicit request to stop emailing indicates a strong preference against further contact.",
+      "follow_up_advice": "Respect the prospect's request and remove them from the mailing list immediately to maintain good reputation. Avoid pushing further on call handling if they emphasize in-house management. Future outreach could focus on businesses that explicitly mention call overflow or missed calls issues.",
+      "improvement_tip": "Since this prospect rejected due to existing in-house handling, future emails could include a qualifying question about current call handling challenges to better target those with pain points. Also, emphasize unique benefits that complement rather than replace in-house teams to reduce upfront resistance.",
+      "company_factors": {
+        "industry": "Healthcare",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "in-house call handling"
+      },
+      "objections": [
+        "We handle all calls in-house and have no plans to change that."
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The healthcare provider is not interested in Telalive because they manage calls internally and do not want to change. They requested no further emails."
+    }
+  },
+  {
+    "thread_id": "19cf91e6fde48c2e",
+    "reply_message_id": "19cf9272bfb146d2",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "H&R Block",
+    "contact_email": "luna+hrblock@gmic.ai",
+    "industry": "Finance",
+    "original_subject": "Handling your peak season call surge without extra staff",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi there,\n\nI'm definitely interested in learning more about Telalive. We're a small team and can't always answer the phone. Can you tell me more about how the AI handles complex questions from callers?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:16:59 -0700",
+    "reply_epoch": 1773706619.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in Telalive due to their small team size and difficulty answering all calls. They want more information specifically about how the AI manages complex caller questions.",
+      "why_accepted_or_rejected": "The prospect is convinced by the value proposition of handling call volume without extra staff, which aligns with their small team constraints. Their follow-up question about complex questions indicates genuine engagement and a desire to understand product capabilities before proceeding.",
+      "follow_up_advice": "Respond promptly with detailed information on Telalive's natural language understanding and ability to handle complex inquiries. Include examples or scenarios relevant to finance or tax services to build trust. Offer to schedule a demo or call to address specific questions and demonstrate AI capabilities in action.",
+      "improvement_tip": "Highlight Telalive's ability to manage complex caller intents more explicitly in the initial email, especially for industries like finance where inquiries can be nuanced. Including a brief example of complex question handling could preempt such questions and increase reply rates.",
+      "company_factors": {
+        "industry": "Finance",
+        "size_signal": "small",
+        "pain_point": "small team can't always answer the phone",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Can you tell me more about how the AI handles complex questions from callers?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "A small finance team interested in Telalive seeks more details on AI handling of complex caller questions before moving forward."
+    }
+  },
+  {
+    "thread_id": "19cf91f7ae23f5ab",
+    "reply_message_id": "19cf9277368b7b8b",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Sola Salons",
+    "contact_email": "luna+solasalons@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "How Sola Salons can stop missing calls across 700+ locations",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi there,\n\nI'm definitely interested in learning more about Telalive. We're a small team and can't always answer the phone. Can you tell me more about how the AI handles complex questions from callers?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:18 -0500",
+    "reply_epoch": 1773706638.0,
+    "time_to_reply_hours": 0.15,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in Telalive due to their small team size and inability to always answer calls, and asks specifically about how the AI handles complex caller questions.",
+      "why_accepted_or_rejected": "The prospect is engaged because they relate to the pain point of missed calls and want to understand Telalive's capabilities in managing complex interactions, indicating a genuine consideration of the product's fit for their needs.",
+      "follow_up_advice": "Respond promptly with detailed information about Telalive's natural language understanding and ability to handle complex caller intents, including examples relevant to beauty salons. Emphasize how Telalive can seamlessly transfer calls to human staff when needed. Offer to schedule a demo or call to address any further questions.",
+      "improvement_tip": "Highlight Telalive's AI sophistication in handling complex queries more explicitly in the initial email to preempt such questions. Also, including a brief mention of how Telalive supports small teams could increase engagement from similar prospects.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "small",
+        "pain_point": "small team can't always answer phone",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "How does the AI handle complex questions from callers?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "A small team from Sola Salons is interested in Telalive and wants to understand its ability to manage complex caller questions before proceeding."
+    }
+  },
+  {
+    "thread_id": "19cf91f818cb6187",
+    "reply_message_id": "19cf9278d4ea3096",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "Smoothie King",
+    "contact_email": "luna+smoothieking@gmic.ai",
+    "industry": "Food",
+    "original_subject": "How Smoothie King can capture every call, day and night",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hello Nathan,\n\nI've been meaning to find an AI solution for our phone lines. We get a lot of appointment requests after 5pm. Does Telalive integrate with Google Calendar or any scheduling tools?\n\nLooking forward to hearing from you,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:24 -0700",
+    "reply_epoch": 1773706644.0,
+    "time_to_reply_hours": 0.15,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in an AI phone solution due to after-hours appointment requests and asks specifically about integration with Google Calendar or scheduling tools.",
+      "why_accepted_or_rejected": "The prospect is positively engaged because they have a known pain point—appointment requests after business hours—and are evaluating whether Telalive can fit into their existing scheduling workflow, indicating a genuine buying signal.",
+      "follow_up_advice": "Respond promptly by confirming Telalive's integration capabilities with Google Calendar and other popular scheduling platforms. Provide examples or documentation if available, and suggest a brief demo or pilot to showcase how Telalive can handle after-hours appointment bookings seamlessly. Emphasize ease of setup and how it can reduce missed calls and lost revenue.",
+      "improvement_tip": "Future emails should highlight integration features upfront, especially with common tools like Google Calendar, as this is a key concern for prospects managing appointments. Including a brief mention of scheduling tool compatibility could increase engagement rates.",
+      "company_factors": {
+        "industry": "Food",
+        "size_signal": "medium",
+        "pain_point": "appointment requests after 5pm",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Does Telalive integrate with Google Calendar or any scheduling tools?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "Smoothie King is interested in Telalive to handle after-hours appointment calls and wants to know about integration with scheduling tools like Google Calendar, indicating a strong potential fit."
+    }
+  },
+  {
+    "thread_id": "19cf91e7728e9a90",
+    "reply_message_id": "19cf927549dc5289",
+    "campaign_id": "campaign_12c7a36d",
+    "company_name": "uBreakiFix by Asurion",
+    "contact_email": "luna+ubreakifix@gmic.ai",
+    "industry": "Tech Services",
+    "original_subject": "How many repair calls slip through the cracks at uBreakiFix?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nGood timing on this. We've been paying $3,000/month for a live answering service and it's not great. $39/month sounds too good to be true — what's the catch? Let's chat.\n\nThanks,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:17:10 -0700",
+    "reply_epoch": 1773706630.0,
+    "time_to_reply_hours": 0.16,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect is intrigued by the cost difference between their current $3,000/month live answering service and Telalive's $39/month plan, expressing skepticism and requesting a conversation to learn more.",
+      "why_accepted_or_rejected": "The prospect acknowledged the pain point of their current expensive and unsatisfactory answering service, showing openness to a more affordable alternative. Their skepticism about the low price indicates they want to understand how Telalive can deliver value at such a low cost, which is a positive buying signal.",
+      "follow_up_advice": "Respond promptly to address the prospect's skepticism by clearly explaining how Telalive works, emphasizing the AI automation benefits, reliability, and the 30-day free trial with money-back guarantee. Highlight that there are no hidden fees and that setup is quick and non-disruptive. Offer to schedule a call to demonstrate the system and answer any questions.",
+      "improvement_tip": "Since the prospect reacted strongly to the cost comparison, future emails should emphasize the cost savings more explicitly and preempt skepticism by briefly explaining how Telalive maintains quality at a low price. Including a mention of the free trial and money-back guarantee upfront could also reduce doubts.",
+      "company_factors": {
+        "industry": "Tech Services",
+        "size_signal": "medium",
+        "pain_point": "high cost and poor quality of current live answering service",
+        "current_solution": "live answering service at $3,000/month"
+      },
+      "objections": [
+        "$39/month sounds too good to be true"
+      ],
+      "questions_asked": [
+        "What's the catch?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is interested due to dissatisfaction with their current expensive answering service and wants to understand how Telalive can offer a better solution at a fraction of the cost."
+    }
+  },
+  {
+    "thread_id": "19cf91f79aa214c0",
+    "reply_message_id": "19cf9276eaba2599",
+    "campaign_id": "campaign_62f22c1b",
+    "company_name": "SalonCentric",
+    "contact_email": "luna+saloncentric@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "How SalonCentric can stop missing calls (and sales)",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi Nathan,\n\nThanks for your email. I'll forward this to our operations manager — she handles our phone systems. Her name is Sarah Chen.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:17:16 -0500",
+    "reply_epoch": 1773706636.0,
+    "time_to_reply_hours": 0.14,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "referring_to_colleague",
+      "reason_summary": "The respondent acknowledged the email and indicated they are not the right contact, forwarding it to the operations manager who handles phone systems.",
+      "why_accepted_or_rejected": "The reply neither accepts nor rejects the offer but redirects the conversation to a more relevant decision maker, showing procedural handling rather than direct interest or rejection.",
+      "follow_up_advice": "Follow up with Sarah Chen, the operations manager, as she is the appropriate contact for phone system decisions. Reference this referral in your next message to establish context and increase engagement chances. Keep the tone professional and concise, emphasizing how Telalive can specifically benefit their operations.",
+      "improvement_tip": "Include a clear call-to-action asking for the correct contact person in the initial email to reduce delays. Also, briefly highlight the relevance of Telalive to operations managers to encourage direct responses from decision makers.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": {
+        "name": "Sarah Chen",
+        "email": "",
+        "title": "operations manager"
+      },
+      "summary": "The initial contact is not the decision maker and has forwarded the email to the operations manager responsible for phone systems."
+    }
+  },
+  {
+    "thread_id": "19cf91d22bf87577",
+    "reply_message_id": "19cf9271645bdde3",
+    "campaign_id": "campaign_d4d1caab",
+    "company_name": "VCA Animal Hospitals",
+    "contact_email": "luna+vca@gmic.ai",
+    "industry": "Veterinary",
+    "original_subject": "How VCA can never miss a pet emergency call",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi Nathan,\n\nWe actually looked into AI phone solutions last year and decided against it. Our customers prefer speaking with a real person, and we had bad experiences with automated systems sounding robotic.\n\nNo thanks,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:16:54 -0500",
+    "reply_epoch": 1773706614.0,
+    "time_to_reply_hours": 0.18,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect explicitly states they previously evaluated AI phone solutions but chose not to proceed due to customer preference for human interaction and poor experiences with robotic-sounding systems.",
+      "why_accepted_or_rejected": "The rejection is based on prior negative experiences with automated phone systems that sounded robotic, which did not align with their customers' preferences for speaking with real people. This indicates a strong emotional and experiential barrier rather than price or feature objections.",
+      "follow_up_advice": "Acknowledge their past experience and emphasize Telalive's natural language capabilities and multi-language support that avoid robotic interactions. Suggest a brief demo to showcase how Telalive can sound natural and improve customer experience without replacing human touch. Avoid pushing too hard given their clear preference for human interaction.",
+      "improvement_tip": "Include a brief mention in future emails about Telalive's advanced natural language AI that avoids robotic tones, addressing common concerns upfront. Highlight customer testimonials from similar veterinary or service industries to build trust. Consider adding a question about their current call handling challenges to engage them more personally.",
+      "company_factors": {
+        "industry": "Veterinary",
+        "size_signal": "large",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [
+        "Customers prefer speaking with a real person",
+        "Bad experiences with automated systems sounding robotic"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The prospect rejects the AI phone solution due to prior negative experiences and customer preference for human interaction, indicating a need to address concerns about robotic automation in future outreach."
+    }
+  },
+  {
+    "thread_id": "19cf932ff91b38b4",
+    "reply_message_id": "19cf933f715d7ddd",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Massage Envy",
+    "contact_email": "luna+massageenvy@gmic.ai",
+    "industry": "Wellness",
+    "original_subject": "How Massage Envy can stop missing calls and bookings",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI appreciate the outreach but this isn't relevant to our business. We don't take phone calls — everything is done through our online portal.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:30:58 -0700",
+    "reply_epoch": 1773707458.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states that their business does not handle phone calls, relying entirely on an online portal, making the AI phone assistant irrelevant to their operations.",
+      "why_accepted_or_rejected": "The rejection is based on a fundamental mismatch between the product's core functionality (handling inbound phone calls) and the prospect's current business process, which excludes phone calls altogether. This eliminates the need for Telalive's services.",
+      "follow_up_advice": "Acknowledge their current setup and thank them for the clarity. Consider asking if they have any other communication challenges or if they might be interested in future AI solutions that integrate with online portals. Avoid pushing the phone call solution further since it does not fit their model.",
+      "improvement_tip": "In future emails, include a qualifying question or statement early on to identify if the prospect handles inbound calls. This can reduce irrelevant outreach and improve engagement rates. Also, tailor messaging to highlight integration with online portals only if applicable.",
+      "company_factors": {
+        "industry": "Wellness",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "online portal"
+      },
+      "objections": [
+        "We don't take phone calls"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect rejects the offer because their business operates exclusively through an online portal and does not handle phone calls, making Telalive irrelevant for them."
+    }
+  },
+  {
+    "thread_id": "19cf9330875c8860",
+    "reply_message_id": "19cf9341cab5bef1",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Wingstop",
+    "contact_email": "luna+wingstop@gmic.ai",
+    "industry": "Restaurant",
+    "original_subject": "How Wingstop can stop missing orders on busy calls",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nGood timing on this. We've been paying $3,000/month for a live answering service and it's not great. $39/month sounds too good to be true — what's the catch? Let's chat.\n\nThanks,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:31:07 -0500",
+    "reply_epoch": 1773707467.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses interest due to dissatisfaction with their current expensive live answering service and curiosity about the low price of Telalive, prompting them to ask for clarification.",
+      "why_accepted_or_rejected": "The prospect is intrigued by the significant cost difference between their current $3,000/month service and Telalive's $39/month plan. Their skepticism about the low price indicates they want to understand the value proposition better before proceeding, showing openness but cautiousness.",
+      "follow_up_advice": "Respond promptly to address the prospect's skepticism by clearly explaining how Telalive delivers value at a lower cost without compromising quality. Highlight the AI capabilities, 24/7 availability, and seamless integration that reduce overhead. Offer to schedule a call to demonstrate the system and answer any concerns in detail.",
+      "improvement_tip": "Emphasize the cost-saving benefits upfront and anticipate skepticism by briefly explaining how Telalive maintains quality at a low price. Including a short testimonial or case study about cost savings could preempt doubts and increase trust.",
+      "company_factors": {
+        "industry": "Restaurant",
+        "size_signal": "medium",
+        "pain_point": "high cost and poor quality of current live answering service",
+        "current_solution": "live answering service at $3,000/month"
+      },
+      "objections": [
+        "$39/month sounds too good to be true"
+      ],
+      "questions_asked": [
+        "what's the catch?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is interested due to dissatisfaction with their current costly answering service and wants to understand how Telalive can offer similar or better service at a fraction of the cost."
+    }
+  },
+  {
+    "thread_id": "19cf933052b11abd",
+    "reply_message_id": "19cf934139e11d57",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Servpro",
+    "contact_email": "luna+servpro@gmic.ai",
+    "industry": "Home Services",
+    "original_subject": "Never miss an urgent restoration call again",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi,\n\nThanks but we're not interested. We already use Ruby Receptionists and are happy with them. Please remove me from your mailing list.\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:31:05 -0700",
+    "reply_epoch": 1773707465.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states they are not interested because they already use a competitor, Ruby Receptionists, and are satisfied with that solution. They also request removal from the mailing list, indicating no desire for further contact.",
+      "why_accepted_or_rejected": "The rejection is based on the prospect's current use of a competing service that meets their needs, which diminishes their motivation to consider Telalive. Their explicit request to be removed from the mailing list shows a firm decision to disengage.",
+      "follow_up_advice": "Respect the prospect's request to be removed from the mailing list to maintain professionalism. Avoid further outreach to this contact to prevent negative impressions. Consider researching if other contacts within the company might be more open to AI phone assistant solutions or if there are unmet needs not addressed by Ruby Receptionists.",
+      "improvement_tip": "Future emails could briefly acknowledge common competitors like Ruby Receptionists and highlight unique differentiators of Telalive to preempt objections. Including a question about current satisfaction or pain points might encourage prospects to reveal unmet needs despite using competitors.",
+      "company_factors": {
+        "industry": "Home Services",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "Ruby Receptionists"
+      },
+      "objections": [
+        "Already using Ruby Receptionists and happy with them"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The prospect rejects the offer because they currently use and are satisfied with Ruby Receptionists, requesting removal from the mailing list."
+    }
+  },
+  {
+    "thread_id": "19cf93302eea8450",
+    "reply_message_id": "19cf93401a286895",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "European Wax Center",
+    "contact_email": "luna+ewc@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "How European Wax Center can never miss a waxing appointment call",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hello Nathan,\n\nI've been meaning to find an AI solution for our phone lines. We get a lot of appointment requests after 5pm. Does Telalive integrate with Google Calendar or any scheduling tools?\n\nLooking forward to hearing from you,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:31:01 -0700",
+    "reply_epoch": 1773707461.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in an AI phone solution due to after-hours appointment requests and asks specifically about integration with Google Calendar or scheduling tools, indicating they are evaluating fit.",
+      "why_accepted_or_rejected": "The prospect's reply shows they recognize the pain point of missed calls after hours and are actively seeking a solution. Their question about integration suggests they want to ensure Telalive fits into their existing workflow before proceeding.",
+      "follow_up_advice": "Respond promptly by confirming Telalive's integration capabilities with Google Calendar and other scheduling platforms. Provide examples or documentation if possible. Emphasize how seamless integration can automate after-hours appointment bookings, reducing missed calls and manual work.",
+      "improvement_tip": "Future emails should highlight Telalive's integration features upfront, especially with popular scheduling tools like Google Calendar, as this is a key concern for appointment-based businesses. Including a brief mention of integration benefits could increase engagement.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "medium",
+        "pain_point": "missed after-hours appointment calls",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Does Telalive integrate with Google Calendar or any scheduling tools?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is interested in Telalive to handle after-hours appointment calls and wants to confirm integration with scheduling tools before moving forward."
+    }
+  },
+  {
+    "thread_id": "19cf9330801b35f1",
+    "reply_message_id": "19cf934227df61e2",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Jersey Mike's",
+    "contact_email": "luna+jerseymikes@gmic.ai",
+    "industry": "Restaurant",
+    "original_subject": "How Jersey Mike’s can never miss a call or order",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi,\n\nThanks but we're not interested. We already use Ruby Receptionists and are happy with them. Please remove me from your mailing list.\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:31:09 -0700",
+    "reply_epoch": 1773707469.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect clearly states they are not interested because they already use a competitor, Ruby Receptionists, and are satisfied with that service. They also request removal from the mailing list, indicating no desire for further contact.",
+      "why_accepted_or_rejected": "The rejection is based on existing satisfaction with a competitor solution, Ruby Receptionists, which likely covers their needs for call answering and order handling. The explicit request to be removed from the mailing list shows a firm decision to disengage.",
+      "follow_up_advice": "Respect the prospect's request to unsubscribe immediately to maintain professionalism. Avoid further outreach to this contact to prevent negative brand perception. Consider researching Ruby Receptionists’ features to better differentiate Telalive in future emails targeting similar prospects.",
+      "improvement_tip": "Since the prospect mentioned a competitor by name, future emails could proactively address common competitor advantages and clearly highlight unique Telalive benefits. Also, including a brief mention of how Telalive differs from or complements services like Ruby Receptionists might reduce outright rejections.",
+      "company_factors": {
+        "industry": "Restaurant",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": "Ruby Receptionists"
+      },
+      "objections": [
+        "Already using Ruby Receptionists and satisfied"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": false,
+      "referral": null,
+      "summary": "The prospect is not interested because they currently use Ruby Receptionists and are happy with it, requesting removal from the mailing list."
+    }
+  },
+  {
+    "thread_id": "19cf9330650842f2",
+    "reply_message_id": "19cf934163a35a36",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Drybar",
+    "contact_email": "luna+drybar@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "Are missed calls costing Drybar bookings?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi Nathan,\n\nWe actually looked into AI phone solutions last year and decided against it. Our customers prefer speaking with a real person, and we had bad experiences with automated systems sounding robotic.\n\nNo thanks,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:31:06 -0500",
+    "reply_epoch": 1773707466.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect explicitly states they previously evaluated AI phone solutions and chose not to proceed because their customers prefer human interaction and they had negative experiences with robotic-sounding automated systems.",
+      "why_accepted_or_rejected": "The rejection is based on prior experience and customer preference. The prospect is concerned about the quality and naturalness of AI phone assistants, indicating a trust barrier with automated systems that sound robotic. This suggests a strong emotional and experiential objection rather than a purely functional or cost-based one.",
+      "follow_up_advice": "Acknowledge their past experience and emphasize Telalive's natural language capabilities and multi-language support that reduce robotic impressions. Offer a brief demo or trial to showcase the system's conversational quality and seamless handoff to human agents to address their concern about customer preference for real people. Avoid pushing too hard but keep the door open for future contact.",
+      "improvement_tip": "Future emails should address common objections about AI sounding robotic upfront, perhaps by highlighting Telalive's advanced natural language understanding and seamless human handoff. Including a short testimonial or case study from a similar beauty or service business could also build trust. Emphasizing the option to customize the system to preserve a human touch might reduce resistance.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "medium",
+        "pain_point": "null",
+        "current_solution": "null"
+      },
+      "objections": [
+        "Customers prefer speaking with a real person",
+        "Bad experiences with robotic-sounding automated systems"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "Drybar is not interested in AI phone solutions due to past negative experiences and customer preference for human interaction, highlighting a trust and quality concern with automated systems."
+    }
+  },
+  {
+    "thread_id": "19cf932ff9420398",
+    "reply_message_id": "19cf933f09001f59",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Sport Clips",
+    "contact_email": "luna+sportclips@gmic.ai",
+    "industry": "Beauty",
+    "original_subject": "Are missed calls costing Sport Clips customers?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Nathan,\n\nI'm not sure if this is the right fit but I'm not saying no either. What kind of businesses typically use Telalive? Do you have experience with our industry specifically?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:30:56 -0500",
+    "reply_epoch": 1773707456.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "neutral",
+      "intent": "asking_question",
+      "reason_summary": "The prospect is uncertain about the fit of Telalive for their business and is seeking clarification on the typical users and industry experience before making a decision.",
+      "why_accepted_or_rejected": "The prospect did not reject the offer outright but expressed hesitation and requested more information about the relevance of Telalive to their specific industry, indicating openness but needing reassurance.",
+      "follow_up_advice": "Respond with examples of similar businesses in the beauty or salon industry that have benefited from Telalive, emphasizing relevant use cases like appointment booking and handling high call volumes. Highlight any specific features tailored to salons or beauty services to build confidence. Offer to provide case studies or references to demonstrate industry experience.",
+      "improvement_tip": "Include industry-specific examples or testimonials in the initial email to preempt such questions. Clearly state the types of businesses served, especially those in beauty or salons, to increase relevance and reduce hesitation.",
+      "company_factors": {
+        "industry": "Beauty",
+        "size_signal": "unknown",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "What kind of businesses typically use Telalive?",
+        "Do you have experience with our industry specifically?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect is cautiously interested but wants confirmation that Telalive suits the beauty industry before proceeding."
+    }
+  },
+  {
+    "thread_id": "19cf93300802bdee",
+    "reply_message_id": "19cf933fd1b6c510",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Nothing Bundt Cakes",
+    "contact_email": "luna+nothingbundt@gmic.ai",
+    "industry": "Food",
+    "original_subject": "Are missed calls costing Nothing Bundt Cakes orders?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hey,\n\nWe're a two-person shop and we literally get maybe 3 calls a day. This is way overkill for us. Also $39/month for something we barely need isn't worth it.\n\nThanks anyway,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:30:59 -0700",
+    "reply_epoch": 1773707459.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "rejected",
+      "intent": "not_interested",
+      "reason_summary": "The prospect indicates their business call volume is very low, making the product unnecessary and not cost-effective for their needs.",
+      "why_accepted_or_rejected": "They explicitly state that with only about three calls per day, the AI phone assistant is excessive for their scale. The $39/month starting price is perceived as too high given their minimal call volume, leading to a clear rejection.",
+      "follow_up_advice": "Acknowledge their small call volume and thank them for their honesty. Consider suggesting a more flexible or pay-as-you-go pricing model in future outreach to very small businesses. Avoid pushing the product on businesses with very low inbound call volume, and instead focus on those with higher call traffic where the value proposition is clearer.",
+      "improvement_tip": "Include qualifying questions or statements in the initial email to identify very small businesses with low call volume and tailor messaging accordingly. Emphasize cost-effectiveness for different business sizes or mention scalable plans. Highlight how even low-volume businesses might benefit from after-hours call handling or missed call capture to increase revenue.",
+      "company_factors": {
+        "industry": "Food",
+        "size_signal": "small",
+        "pain_point": null,
+        "current_solution": null
+      },
+      "objections": [
+        "Too few calls to justify the service",
+        "Cost not worth it for their needs"
+      ],
+      "questions_asked": [],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "A small food business with very low call volume rejects the AI phone assistant as unnecessary and too costly for their limited needs."
+    }
+  },
+  {
+    "thread_id": "19cf933027f8235c",
+    "reply_message_id": "19cf93407aa9f54f",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "The Joint Chiropractic",
+    "contact_email": "luna+thejoint@gmic.ai",
+    "industry": "Healthcare",
+    "original_subject": "What if no patient call went unanswered?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi there,\n\nI'm definitely interested in learning more about Telalive. We're a small team and can't always answer the phone. Can you tell me more about how the AI handles complex questions from callers?\n\nRegards,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 19:31:02 -0500",
+    "reply_epoch": 1773707462.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "asking_question",
+      "reason_summary": "The prospect expresses clear interest in Telalive due to their small team size and inability to always answer calls, and they want more details about how the AI manages complex caller questions.",
+      "why_accepted_or_rejected": "The prospect's interest is driven by their operational challenge of missed calls. They seek reassurance about the AI's capability to handle complex inquiries, indicating they are seriously considering the solution but need more technical confidence before proceeding.",
+      "follow_up_advice": "Respond promptly with a detailed explanation of Telalive's natural language understanding capabilities and examples of how it manages complex questions. Highlight the seamless handoff to human staff when needed to alleviate concerns. Also, mention the easy setup and integration to reinforce convenience for their small team.",
+      "improvement_tip": "Since the prospect is focused on AI handling complexity, future emails could include a brief mention of Telalive's ability to understand and respond to complex queries and escalate to humans when necessary. This preempts questions and builds confidence.",
+      "company_factors": {
+        "industry": "Healthcare",
+        "size_signal": "small",
+        "pain_point": "small team can't always answer phone",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Can you tell me more about how the AI handles complex questions from callers?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "A small healthcare team is interested in Telalive to reduce missed calls and wants more information on the AI's ability to handle complex caller questions."
+    }
+  },
+  {
+    "thread_id": "19cf93304274867d",
+    "reply_message_id": "19cf9340dd7a7776",
+    "campaign_id": "campaign_89a3d364",
+    "company_name": "Orangetheory Fitness",
+    "contact_email": "luna+otf@gmic.ai",
+    "industry": "Fitness",
+    "original_subject": "Are missed calls costing Orangetheory new members?",
+    "original_body_length": 0,
+    "reply_from": "luna@gmic.ai",
+    "reply_from_name": "luna",
+    "reply_body": "Hi Nathan,\n\nThanks for reaching out. This sounds interesting — we've been looking for a better phone answering solution. Could you send over some pricing details? We currently have about 50 missed calls per week after hours.\n\nBest,\nTest User",
+    "reply_date": "Mon, 16 Mar 2026 17:31:03 -0700",
+    "reply_epoch": 1773707463.0,
+    "time_to_reply_hours": 0.02,
+    "reply_type": "human",
+    "analysis": {
+      "sentiment": "interested",
+      "intent": "requesting_info",
+      "reason_summary": "The prospect expresses interest in the AI phone answering solution and requests pricing details, indicating a potential need due to a high volume of missed after-hours calls.",
+      "why_accepted_or_rejected": "The prospect acknowledges the problem of missed calls and is actively seeking a better solution, which aligns well with Telalive's value proposition. Their direct request for pricing shows genuine buying intent.",
+      "follow_up_advice": "Respond promptly with clear, concise pricing information tailored to their call volume and needs. Highlight how Telalive can reduce their 50 missed calls per week and the cost savings compared to traditional staffing. Include details about the 30-day free trial and easy setup to lower their adoption barriers.",
+      "improvement_tip": "Emphasize cost-effectiveness and specific pain points like missed after-hours calls in the initial email, as this prospect responded positively to those elements. Including a brief mention of pricing tiers or a call-to-action for pricing details could increase engagement.",
+      "company_factors": {
+        "industry": "Fitness",
+        "size_signal": "medium",
+        "pain_point": "50 missed calls per week after hours",
+        "current_solution": null
+      },
+      "objections": [],
+      "questions_asked": [
+        "Could you send over some pricing details?"
+      ],
+      "is_decision_maker": true,
+      "referral": null,
+      "summary": "The prospect from Orangetheory Fitness is interested in Telalive due to frequent missed after-hours calls and requests pricing information to evaluate the solution."
+    }
+  }
+]

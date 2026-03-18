@@ -1,0 +1,1955 @@
+{
+  "records": [
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 2173,
+      "completion_tokens": 314,
+      "estimated_cost": 0.001372,
+      "timestamp": 1773705900.7812228
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 2173,
+      "completion_tokens": 346,
+      "estimated_cost": 0.001423,
+      "timestamp": 1773705901.4934077
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 2157,
+      "completion_tokens": 332,
+      "estimated_cost": 0.001394,
+      "timestamp": 1773705901.537984
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 1594,
+      "completion_tokens": 311,
+      "estimated_cost": 0.001135,
+      "timestamp": 1773705908.925891
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 2159,
+      "completion_tokens": 318,
+      "estimated_cost": 0.001372,
+      "timestamp": 1773705909.2832928
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 1602,
+      "completion_tokens": 299,
+      "estimated_cost": 0.001119,
+      "timestamp": 1773705909.4891691
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 2193,
+      "completion_tokens": 330,
+      "estimated_cost": 0.001405,
+      "timestamp": 1773705915.1161013
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 2212,
+      "completion_tokens": 271,
+      "estimated_cost": 0.001318,
+      "timestamp": 1773705916.6163447
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 1651,
+      "completion_tokens": 298,
+      "estimated_cost": 0.001137,
+      "timestamp": 1773705917.2313037
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "researcher",
+      "prompt_tokens": 2206,
+      "completion_tokens": 361,
+      "estimated_cost": 0.00146,
+      "timestamp": 1773705923.7735808
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2608,
+      "completion_tokens": 146,
+      "estimated_cost": 0.001277,
+      "timestamp": 1773705928.634814
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2636,
+      "completion_tokens": 156,
+      "estimated_cost": 0.001304,
+      "timestamp": 1773705928.810981
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2619,
+      "completion_tokens": 140,
+      "estimated_cost": 0.001272,
+      "timestamp": 1773705928.9317133
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1734,
+      "completion_tokens": 227,
+      "estimated_cost": 0.001057,
+      "timestamp": 1773705933.8805702
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1739,
+      "completion_tokens": 231,
+      "estimated_cost": 0.001065,
+      "timestamp": 1773705934.6184936
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2601,
+      "completion_tokens": 148,
+      "estimated_cost": 0.001277,
+      "timestamp": 1773705937.1457934
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1752,
+      "completion_tokens": 272,
+      "estimated_cost": 0.001136,
+      "timestamp": 1773705937.1813776
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2611,
+      "completion_tokens": 138,
+      "estimated_cost": 0.001265,
+      "timestamp": 1773705938.562961
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2613,
+      "completion_tokens": 131,
+      "estimated_cost": 0.001255,
+      "timestamp": 1773705940.1695867
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1745,
+      "completion_tokens": 247,
+      "estimated_cost": 0.001093,
+      "timestamp": 1773705943.0865223
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1737,
+      "completion_tokens": 244,
+      "estimated_cost": 0.001085,
+      "timestamp": 1773705943.2395136
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1725,
+      "completion_tokens": 224,
+      "estimated_cost": 0.001048,
+      "timestamp": 1773705943.7092476
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2566,
+      "completion_tokens": 154,
+      "estimated_cost": 0.001273,
+      "timestamp": 1773705945.9541237
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2626,
+      "completion_tokens": 150,
+      "estimated_cost": 0.00129,
+      "timestamp": 1773705946.3534052
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2590,
+      "completion_tokens": 139,
+      "estimated_cost": 0.001258,
+      "timestamp": 1773705946.8201747
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1753,
+      "completion_tokens": 229,
+      "estimated_cost": 0.001068,
+      "timestamp": 1773705949.4067717
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1752,
+      "completion_tokens": 255,
+      "estimated_cost": 0.001109,
+      "timestamp": 1773705950.949022
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1733,
+      "completion_tokens": 245,
+      "estimated_cost": 0.001085,
+      "timestamp": 1773705951.8214002
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "copywriter",
+      "prompt_tokens": 2662,
+      "completion_tokens": 159,
+      "estimated_cost": 0.001319,
+      "timestamp": 1773705953.4842849
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reviewer",
+      "prompt_tokens": 1757,
+      "completion_tokens": 237,
+      "estimated_cost": 0.001082,
+      "timestamp": 1773705958.0562615
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 1600,
+      "completion_tokens": 312,
+      "estimated_cost": 0.001139,
+      "timestamp": 1773705977.2907898
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 1600,
+      "completion_tokens": 323,
+      "estimated_cost": 0.001157,
+      "timestamp": 1773705977.5945265
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 1597,
+      "completion_tokens": 308,
+      "estimated_cost": 0.001132,
+      "timestamp": 1773705977.878089
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 1599,
+      "completion_tokens": 301,
+      "estimated_cost": 0.001121,
+      "timestamp": 1773705985.7267947
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 2200,
+      "completion_tokens": 326,
+      "estimated_cost": 0.001402,
+      "timestamp": 1773705985.8977633
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 1602,
+      "completion_tokens": 325,
+      "estimated_cost": 0.001161,
+      "timestamp": 1773705986.81966
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 1599,
+      "completion_tokens": 291,
+      "estimated_cost": 0.001105,
+      "timestamp": 1773705993.5157564
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 2199,
+      "completion_tokens": 354,
+      "estimated_cost": 0.001446,
+      "timestamp": 1773705996.9399896
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 2242,
+      "completion_tokens": 327,
+      "estimated_cost": 0.00142,
+      "timestamp": 1773705997.31761
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "researcher",
+      "prompt_tokens": 2203,
+      "completion_tokens": 314,
+      "estimated_cost": 0.001384,
+      "timestamp": 1773706002.2910113
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2609,
+      "completion_tokens": 157,
+      "estimated_cost": 0.001295,
+      "timestamp": 1773706006.1263008
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2602,
+      "completion_tokens": 131,
+      "estimated_cost": 0.00125,
+      "timestamp": 1773706007.416079
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2616,
+      "completion_tokens": 150,
+      "estimated_cost": 0.001286,
+      "timestamp": 1773706007.9052482
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1729,
+      "completion_tokens": 256,
+      "estimated_cost": 0.001101,
+      "timestamp": 1773706011.53307
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1753,
+      "completion_tokens": 239,
+      "estimated_cost": 0.001084,
+      "timestamp": 1773706013.0737147
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1748,
+      "completion_tokens": 238,
+      "estimated_cost": 0.00108,
+      "timestamp": 1773706015.0864377
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2624,
+      "completion_tokens": 148,
+      "estimated_cost": 0.001286,
+      "timestamp": 1773706016.6366944
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2596,
+      "completion_tokens": 166,
+      "estimated_cost": 0.001304,
+      "timestamp": 1773706017.5997243
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2623,
+      "completion_tokens": 128,
+      "estimated_cost": 0.001254,
+      "timestamp": 1773706018.3711145
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1761,
+      "completion_tokens": 228,
+      "estimated_cost": 0.001069,
+      "timestamp": 1773706021.2942848
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2582,
+      "completion_tokens": 128,
+      "estimated_cost": 0.001238,
+      "timestamp": 1773706023.8820744
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1725,
+      "completion_tokens": 230,
+      "estimated_cost": 0.001058,
+      "timestamp": 1773706025.3358562
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1746,
+      "completion_tokens": 263,
+      "estimated_cost": 0.001119,
+      "timestamp": 1773706025.5201519
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2631,
+      "completion_tokens": 160,
+      "estimated_cost": 0.001308,
+      "timestamp": 1773706028.1769583
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2652,
+      "completion_tokens": 142,
+      "estimated_cost": 0.001288,
+      "timestamp": 1773706028.3137684
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1723,
+      "completion_tokens": 249,
+      "estimated_cost": 0.001088,
+      "timestamp": 1773706028.6588113
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2608,
+      "completion_tokens": 138,
+      "estimated_cost": 0.001264,
+      "timestamp": 1773706031.0055854
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1741,
+      "completion_tokens": 234,
+      "estimated_cost": 0.001071,
+      "timestamp": 1773706032.2639287
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1766,
+      "completion_tokens": 251,
+      "estimated_cost": 0.001108,
+      "timestamp": 1773706032.9371793
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1736,
+      "completion_tokens": 339,
+      "estimated_cost": 0.001237,
+      "timestamp": 1773706037.3663168
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "copywriter",
+      "prompt_tokens": 2869,
+      "completion_tokens": 143,
+      "estimated_cost": 0.001376,
+      "timestamp": 1773706040.5425293
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reviewer",
+      "prompt_tokens": 1741,
+      "completion_tokens": 233,
+      "estimated_cost": 0.001069,
+      "timestamp": 1773706045.891526
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 1593,
+      "completion_tokens": 310,
+      "estimated_cost": 0.001133,
+      "timestamp": 1773706059.012643
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 2275,
+      "completion_tokens": 325,
+      "estimated_cost": 0.00143,
+      "timestamp": 1773706059.1451905
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 2220,
+      "completion_tokens": 341,
+      "estimated_cost": 0.001434,
+      "timestamp": 1773706060.147205
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 2171,
+      "completion_tokens": 321,
+      "estimated_cost": 0.001382,
+      "timestamp": 1773706066.3414514
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 1596,
+      "completion_tokens": 297,
+      "estimated_cost": 0.001114,
+      "timestamp": 1773706067.2267785
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 1752,
+      "completion_tokens": 308,
+      "estimated_cost": 0.001194,
+      "timestamp": 1773706068.7179234
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 2072,
+      "completion_tokens": 318,
+      "estimated_cost": 0.001338,
+      "timestamp": 1773706074.2208867
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 2097,
+      "completion_tokens": 338,
+      "estimated_cost": 0.00138,
+      "timestamp": 1773706074.8230796
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 1620,
+      "completion_tokens": 298,
+      "estimated_cost": 0.001125,
+      "timestamp": 1773706075.323644
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "researcher",
+      "prompt_tokens": 2056,
+      "completion_tokens": 321,
+      "estimated_cost": 0.001336,
+      "timestamp": 1773706082.8171115
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2633,
+      "completion_tokens": 148,
+      "estimated_cost": 0.00129,
+      "timestamp": 1773706086.6289783
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2604,
+      "completion_tokens": 144,
+      "estimated_cost": 0.001272,
+      "timestamp": 1773706086.6405406
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2621,
+      "completion_tokens": 145,
+      "estimated_cost": 0.00128,
+      "timestamp": 1773706086.6923401
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1739,
+      "completion_tokens": 226,
+      "estimated_cost": 0.001057,
+      "timestamp": 1773706091.0960283
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1743,
+      "completion_tokens": 231,
+      "estimated_cost": 0.001067,
+      "timestamp": 1773706091.233611
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1744,
+      "completion_tokens": 248,
+      "estimated_cost": 0.001094,
+      "timestamp": 1773706091.3675537
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2621,
+      "completion_tokens": 143,
+      "estimated_cost": 0.001277,
+      "timestamp": 1773706094.7875946
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2589,
+      "completion_tokens": 156,
+      "estimated_cost": 0.001285,
+      "timestamp": 1773706094.8988562
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2607,
+      "completion_tokens": 153,
+      "estimated_cost": 0.001288,
+      "timestamp": 1773706094.9749625
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1752,
+      "completion_tokens": 239,
+      "estimated_cost": 0.001083,
+      "timestamp": 1773706099.663747
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1751,
+      "completion_tokens": 243,
+      "estimated_cost": 0.001089,
+      "timestamp": 1773706100.254325
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2614,
+      "completion_tokens": 139,
+      "estimated_cost": 0.001268,
+      "timestamp": 1773706102.0209758
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2634,
+      "completion_tokens": 155,
+      "estimated_cost": 0.001302,
+      "timestamp": 1773706103.6074939
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1741,
+      "completion_tokens": 237,
+      "estimated_cost": 0.001076,
+      "timestamp": 1773706103.7562456
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1734,
+      "completion_tokens": 234,
+      "estimated_cost": 0.001068,
+      "timestamp": 1773706105.8814852
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2596,
+      "completion_tokens": 157,
+      "estimated_cost": 0.00129,
+      "timestamp": 1773706106.169518
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1753,
+      "completion_tokens": 243,
+      "estimated_cost": 0.00109,
+      "timestamp": 1773706108.070196
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "copywriter",
+      "prompt_tokens": 2620,
+      "completion_tokens": 154,
+      "estimated_cost": 0.001294,
+      "timestamp": 1773706109.1898596
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1753,
+      "completion_tokens": 248,
+      "estimated_cost": 0.001098,
+      "timestamp": 1773706112.7950792
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reviewer",
+      "prompt_tokens": 1752,
+      "completion_tokens": 231,
+      "estimated_cost": 0.00107,
+      "timestamp": 1773706113.2393339
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 1828,
+      "completion_tokens": 303,
+      "estimated_cost": 0.001216,
+      "timestamp": 1773706127.4642873
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 2116,
+      "completion_tokens": 314,
+      "estimated_cost": 0.001349,
+      "timestamp": 1773706127.4885142
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 2217,
+      "completion_tokens": 365,
+      "estimated_cost": 0.001471,
+      "timestamp": 1773706128.4657767
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 2210,
+      "completion_tokens": 340,
+      "estimated_cost": 0.001428,
+      "timestamp": 1773706134.6928387
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 2140,
+      "completion_tokens": 314,
+      "estimated_cost": 0.001358,
+      "timestamp": 1773706137.0142732
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 2250,
+      "completion_tokens": 349,
+      "estimated_cost": 0.001458,
+      "timestamp": 1773706137.49389
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 2148,
+      "completion_tokens": 312,
+      "estimated_cost": 0.001358,
+      "timestamp": 1773706144.2647243
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 1594,
+      "completion_tokens": 282,
+      "estimated_cost": 0.001089,
+      "timestamp": 1773706144.7309299
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 2240,
+      "completion_tokens": 320,
+      "estimated_cost": 0.001408,
+      "timestamp": 1773706146.2047606
+    },
+    {
+      "campaign_id": "campaign_29129bc3",
+      "step": "researcher",
+      "prompt_tokens": 1601,
+      "completion_tokens": 318,
+      "estimated_cost": 0.001149,
+      "timestamp": 1773706152.936907
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1639,
+      "completion_tokens": 379,
+      "estimated_cost": 0.001262,
+      "timestamp": 1773706663.7672563
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1662,
+      "completion_tokens": 346,
+      "estimated_cost": 0.001218,
+      "timestamp": 1773706666.825366
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1662,
+      "completion_tokens": 349,
+      "estimated_cost": 0.001223,
+      "timestamp": 1773706666.8547368
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1653,
+      "completion_tokens": 364,
+      "estimated_cost": 0.001244,
+      "timestamp": 1773706667.3083758
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1642,
+      "completion_tokens": 377,
+      "estimated_cost": 0.00126,
+      "timestamp": 1773706667.6770627
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1653,
+      "completion_tokens": 339,
+      "estimated_cost": 0.001204,
+      "timestamp": 1773706670.8117104
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1640,
+      "completion_tokens": 342,
+      "estimated_cost": 0.001203,
+      "timestamp": 1773706672.9348795
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1652,
+      "completion_tokens": 344,
+      "estimated_cost": 0.001211,
+      "timestamp": 1773706673.95713
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1643,
+      "completion_tokens": 334,
+      "estimated_cost": 0.001192,
+      "timestamp": 1773706674.448593
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1637,
+      "completion_tokens": 305,
+      "estimated_cost": 0.001143,
+      "timestamp": 1773706674.9543417
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1646,
+      "completion_tokens": 330,
+      "estimated_cost": 0.001186,
+      "timestamp": 1773706675.2924862
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1652,
+      "completion_tokens": 347,
+      "estimated_cost": 0.001216,
+      "timestamp": 1773706676.6889849
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1649,
+      "completion_tokens": 320,
+      "estimated_cost": 0.001172,
+      "timestamp": 1773706678.2764297
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1634,
+      "completion_tokens": 300,
+      "estimated_cost": 0.001134,
+      "timestamp": 1773706678.9531925
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1653,
+      "completion_tokens": 357,
+      "estimated_cost": 0.001232,
+      "timestamp": 1773706679.3317327
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1637,
+      "completion_tokens": 305,
+      "estimated_cost": 0.001143,
+      "timestamp": 1773706679.353054
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1641,
+      "completion_tokens": 325,
+      "estimated_cost": 0.001176,
+      "timestamp": 1773706681.906159
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1656,
+      "completion_tokens": 329,
+      "estimated_cost": 0.001189,
+      "timestamp": 1773706684.1411624
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1647,
+      "completion_tokens": 325,
+      "estimated_cost": 0.001179,
+      "timestamp": 1773706684.1815972
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1647,
+      "completion_tokens": 349,
+      "estimated_cost": 0.001217,
+      "timestamp": 1773706684.6237574
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1661,
+      "completion_tokens": 333,
+      "estimated_cost": 0.001197,
+      "timestamp": 1773706685.1002028
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1639,
+      "completion_tokens": 353,
+      "estimated_cost": 0.00122,
+      "timestamp": 1773706687.5012643
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1653,
+      "completion_tokens": 357,
+      "estimated_cost": 0.001232,
+      "timestamp": 1773706689.6786122
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1653,
+      "completion_tokens": 346,
+      "estimated_cost": 0.001215,
+      "timestamp": 1773706689.9386032
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1659,
+      "completion_tokens": 338,
+      "estimated_cost": 0.001204,
+      "timestamp": 1773706691.3668246
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1644,
+      "completion_tokens": 316,
+      "estimated_cost": 0.001163,
+      "timestamp": 1773706694.3854167
+    },
+    {
+      "campaign_id": "campaign_62f22c1b",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1662,
+      "completion_tokens": 343,
+      "estimated_cost": 0.001214,
+      "timestamp": 1773706695.0410588
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1633,
+      "completion_tokens": 329,
+      "estimated_cost": 0.00118,
+      "timestamp": 1773706695.8996482
+    },
+    {
+      "campaign_id": "campaign_12c7a36d",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1665,
+      "completion_tokens": 403,
+      "estimated_cost": 0.001311,
+      "timestamp": 1773706703.1570265
+    },
+    {
+      "campaign_id": "campaign_d4d1caab",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1655,
+      "completion_tokens": 366,
+      "estimated_cost": 0.001248,
+      "timestamp": 1773706703.3457358
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 1601,
+      "completion_tokens": 288,
+      "estimated_cost": 0.001101,
+      "timestamp": 1773707348.5324354
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 2358,
+      "completion_tokens": 359,
+      "estimated_cost": 0.001518,
+      "timestamp": 1773707349.5666182
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 2213,
+      "completion_tokens": 323,
+      "estimated_cost": 0.001402,
+      "timestamp": 1773707349.831897
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 2274,
+      "completion_tokens": 341,
+      "estimated_cost": 0.001455,
+      "timestamp": 1773707354.1151452
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 2333,
+      "completion_tokens": 328,
+      "estimated_cost": 0.001458,
+      "timestamp": 1773707355.0716867
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 2131,
+      "completion_tokens": 341,
+      "estimated_cost": 0.001398,
+      "timestamp": 1773707356.3347054
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 1596,
+      "completion_tokens": 303,
+      "estimated_cost": 0.001123,
+      "timestamp": 1773707361.2948189
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 1600,
+      "completion_tokens": 329,
+      "estimated_cost": 0.001166,
+      "timestamp": 1773707362.1579576
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 2183,
+      "completion_tokens": 341,
+      "estimated_cost": 0.001419,
+      "timestamp": 1773707363.00876
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "researcher",
+      "prompt_tokens": 1946,
+      "completion_tokens": 320,
+      "estimated_cost": 0.00129,
+      "timestamp": 1773707367.2794545
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2619,
+      "completion_tokens": 130,
+      "estimated_cost": 0.001256,
+      "timestamp": 1773707370.7682261
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2586,
+      "completion_tokens": 164,
+      "estimated_cost": 0.001297,
+      "timestamp": 1773707371.135712
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2660,
+      "completion_tokens": 159,
+      "estimated_cost": 0.001318,
+      "timestamp": 1773707371.169747
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1727,
+      "completion_tokens": 237,
+      "estimated_cost": 0.00107,
+      "timestamp": 1773707373.9750366
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1763,
+      "completion_tokens": 228,
+      "estimated_cost": 0.00107,
+      "timestamp": 1773707374.2925017
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1759,
+      "completion_tokens": 236,
+      "estimated_cost": 0.001081,
+      "timestamp": 1773707374.6102262
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2635,
+      "completion_tokens": 137,
+      "estimated_cost": 0.001273,
+      "timestamp": 1773707375.993905
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2637,
+      "completion_tokens": 126,
+      "estimated_cost": 0.001256,
+      "timestamp": 1773707376.6225638
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2626,
+      "completion_tokens": 132,
+      "estimated_cost": 0.001262,
+      "timestamp": 1773707376.9925892
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1733,
+      "completion_tokens": 250,
+      "estimated_cost": 0.001093,
+      "timestamp": 1773707379.1552718
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1723,
+      "completion_tokens": 234,
+      "estimated_cost": 0.001064,
+      "timestamp": 1773707380.612764
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2623,
+      "completion_tokens": 133,
+      "estimated_cost": 0.001262,
+      "timestamp": 1773707381.2702608
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1733,
+      "completion_tokens": 243,
+      "estimated_cost": 0.001082,
+      "timestamp": 1773707381.4330044
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2640,
+      "completion_tokens": 153,
+      "estimated_cost": 0.001301,
+      "timestamp": 1773707382.7907073
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2599,
+      "completion_tokens": 164,
+      "estimated_cost": 0.001302,
+      "timestamp": 1773707384.6083436
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1751,
+      "completion_tokens": 224,
+      "estimated_cost": 0.001059,
+      "timestamp": 1773707385.599406
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1729,
+      "completion_tokens": 234,
+      "estimated_cost": 0.001066,
+      "timestamp": 1773707385.890374
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "copywriter",
+      "prompt_tokens": 2612,
+      "completion_tokens": 137,
+      "estimated_cost": 0.001264,
+      "timestamp": 1773707387.9
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1761,
+      "completion_tokens": 246,
+      "estimated_cost": 0.001098,
+      "timestamp": 1773707389.0011566
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reviewer",
+      "prompt_tokens": 1734,
+      "completion_tokens": 252,
+      "estimated_cost": 0.001097,
+      "timestamp": 1773707391.8305597
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1661,
+      "completion_tokens": 328,
+      "estimated_cost": 0.001189,
+      "timestamp": 1773707522.4195526
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1644,
+      "completion_tokens": 341,
+      "estimated_cost": 0.001203,
+      "timestamp": 1773707522.4297454
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1644,
+      "completion_tokens": 333,
+      "estimated_cost": 0.00119,
+      "timestamp": 1773707522.7646418
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1656,
+      "completion_tokens": 373,
+      "estimated_cost": 0.001259,
+      "timestamp": 1773707525.471802
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1640,
+      "completion_tokens": 352,
+      "estimated_cost": 0.001219,
+      "timestamp": 1773707525.5964885
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1647,
+      "completion_tokens": 321,
+      "estimated_cost": 0.001172,
+      "timestamp": 1773707528.03178
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1655,
+      "completion_tokens": 360,
+      "estimated_cost": 0.001238,
+      "timestamp": 1773707529.1025891
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1649,
+      "completion_tokens": 395,
+      "estimated_cost": 0.001292,
+      "timestamp": 1773707529.8473248
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1658,
+      "completion_tokens": 338,
+      "estimated_cost": 0.001204,
+      "timestamp": 1773707530.6476526
+    },
+    {
+      "campaign_id": "campaign_89a3d364",
+      "step": "reply_analyzer",
+      "prompt_tokens": 1651,
+      "completion_tokens": 347,
+      "estimated_cost": 0.001216,
+      "timestamp": 1773707533.2748754
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1615,
+      "completion_tokens": 291,
+      "estimated_cost": 0.001112,
+      "timestamp": 1773789627.1588662
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1601,
+      "completion_tokens": 314,
+      "estimated_cost": 0.001143,
+      "timestamp": 1773789627.4654448
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2157,
+      "completion_tokens": 356,
+      "estimated_cost": 0.001432,
+      "timestamp": 1773789628.6481705
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2142,
+      "completion_tokens": 324,
+      "estimated_cost": 0.001375,
+      "timestamp": 1773789631.2548034
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1868,
+      "completion_tokens": 311,
+      "estimated_cost": 0.001245,
+      "timestamp": 1773789633.4360018
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1587,
+      "completion_tokens": 286,
+      "estimated_cost": 0.001092,
+      "timestamp": 1773789633.8903131
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2153,
+      "completion_tokens": 330,
+      "estimated_cost": 0.001389,
+      "timestamp": 1773789636.688796
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1590,
+      "completion_tokens": 286,
+      "estimated_cost": 0.001094,
+      "timestamp": 1773789638.4078536
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2282,
+      "completion_tokens": 331,
+      "estimated_cost": 0.001442,
+      "timestamp": 1773789642.5909293
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2201,
+      "completion_tokens": 363,
+      "estimated_cost": 0.001461,
+      "timestamp": 1773789644.2429497
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2347,
+      "completion_tokens": 335,
+      "estimated_cost": 0.001475,
+      "timestamp": 1773789645.6061738
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2219,
+      "completion_tokens": 314,
+      "estimated_cost": 0.00139,
+      "timestamp": 1773789647.7378628
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1648,
+      "completion_tokens": 334,
+      "estimated_cost": 0.001194,
+      "timestamp": 1773789649.4771183
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2121,
+      "completion_tokens": 325,
+      "estimated_cost": 0.001368,
+      "timestamp": 1773789652.2771788
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2017,
+      "completion_tokens": 341,
+      "estimated_cost": 0.001352,
+      "timestamp": 1773789653.3799658
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 2121,
+      "completion_tokens": 304,
+      "estimated_cost": 0.001335,
+      "timestamp": 1773789654.2304962
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1590,
+      "completion_tokens": 295,
+      "estimated_cost": 0.001108,
+      "timestamp": 1773789656.6896403
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1599,
+      "completion_tokens": 299,
+      "estimated_cost": 0.001118,
+      "timestamp": 1773789659.7621272
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "researcher",
+      "prompt_tokens": 1963,
+      "completion_tokens": 327,
+      "estimated_cost": 0.001308,
+      "timestamp": 1773789660.192109
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2601,
+      "completion_tokens": 134,
+      "estimated_cost": 0.001255,
+      "timestamp": 1773789664.117869
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2574,
+      "completion_tokens": 152,
+      "estimated_cost": 0.001273,
+      "timestamp": 1773789664.746621
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2646,
+      "completion_tokens": 164,
+      "estimated_cost": 0.001321,
+      "timestamp": 1773789665.3128033
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1738,
+      "completion_tokens": 233,
+      "estimated_cost": 0.001068,
+      "timestamp": 1773789667.9410958
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1754,
+      "completion_tokens": 226,
+      "estimated_cost": 0.001063,
+      "timestamp": 1773789667.9970732
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1722,
+      "completion_tokens": 225,
+      "estimated_cost": 0.001049,
+      "timestamp": 1773789668.3154128
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2616,
+      "completion_tokens": 166,
+      "estimated_cost": 0.001312,
+      "timestamp": 1773789670.0221698
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2595,
+      "completion_tokens": 163,
+      "estimated_cost": 0.001299,
+      "timestamp": 1773789670.3365457
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2569,
+      "completion_tokens": 156,
+      "estimated_cost": 0.001277,
+      "timestamp": 1773789670.3486118
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1758,
+      "completion_tokens": 226,
+      "estimated_cost": 0.001065,
+      "timestamp": 1773789673.220074
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1749,
+      "completion_tokens": 244,
+      "estimated_cost": 0.00109,
+      "timestamp": 1773789673.6335864
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1742,
+      "completion_tokens": 219,
+      "estimated_cost": 0.001047,
+      "timestamp": 1773789674.8741143
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2621,
+      "completion_tokens": 136,
+      "estimated_cost": 0.001266,
+      "timestamp": 1773789675.135199
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2618,
+      "completion_tokens": 145,
+      "estimated_cost": 0.001279,
+      "timestamp": 1773789676.435414
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2595,
+      "completion_tokens": 145,
+      "estimated_cost": 0.00127,
+      "timestamp": 1773789677.3905013
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1724,
+      "completion_tokens": 239,
+      "estimated_cost": 0.001072,
+      "timestamp": 1773789679.1174498
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1735,
+      "completion_tokens": 216,
+      "estimated_cost": 0.00104,
+      "timestamp": 1773789679.326984
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1731,
+      "completion_tokens": 233,
+      "estimated_cost": 0.001065,
+      "timestamp": 1773789680.319879
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2595,
+      "completion_tokens": 146,
+      "estimated_cost": 0.001272,
+      "timestamp": 1773789681.2911081
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2565,
+      "completion_tokens": 140,
+      "estimated_cost": 0.00125,
+      "timestamp": 1773789681.755237
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2595,
+      "completion_tokens": 163,
+      "estimated_cost": 0.001299,
+      "timestamp": 1773789682.299194
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1732,
+      "completion_tokens": 223,
+      "estimated_cost": 0.00105,
+      "timestamp": 1773789684.0534263
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1726,
+      "completion_tokens": 256,
+      "estimated_cost": 0.0011,
+      "timestamp": 1773789685.65516
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1749,
+      "completion_tokens": 236,
+      "estimated_cost": 0.001077,
+      "timestamp": 1773789686.1320567
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2645,
+      "completion_tokens": 158,
+      "estimated_cost": 0.001311,
+      "timestamp": 1773789686.6480262
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2593,
+      "completion_tokens": 138,
+      "estimated_cost": 0.001258,
+      "timestamp": 1773789687.799385
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2624,
+      "completion_tokens": 157,
+      "estimated_cost": 0.001301,
+      "timestamp": 1773789688.0255072
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1744,
+      "completion_tokens": 210,
+      "estimated_cost": 0.001034,
+      "timestamp": 1773789689.171936
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1748,
+      "completion_tokens": 251,
+      "estimated_cost": 0.001101,
+      "timestamp": 1773789690.6979568
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2623,
+      "completion_tokens": 186,
+      "estimated_cost": 0.001347,
+      "timestamp": 1773789692.0394382
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1724,
+      "completion_tokens": 246,
+      "estimated_cost": 0.001083,
+      "timestamp": 1773789692.6692612
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2615,
+      "completion_tokens": 158,
+      "estimated_cost": 0.001299,
+      "timestamp": 1773789692.8041933
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2631,
+      "completion_tokens": 121,
+      "estimated_cost": 0.001246,
+      "timestamp": 1773789694.408177
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1776,
+      "completion_tokens": 218,
+      "estimated_cost": 0.001059,
+      "timestamp": 1773789695.361627
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1748,
+      "completion_tokens": 229,
+      "estimated_cost": 0.001066,
+      "timestamp": 1773789695.8418596
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2594,
+      "completion_tokens": 150,
+      "estimated_cost": 0.001278,
+      "timestamp": 1773789697.7628276
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1709,
+      "completion_tokens": 272,
+      "estimated_cost": 0.001119,
+      "timestamp": 1773789698.1143982
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2817,
+      "completion_tokens": 135,
+      "estimated_cost": 0.001343,
+      "timestamp": 1773789700.448431
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2618,
+      "completion_tokens": 147,
+      "estimated_cost": 0.001282,
+      "timestamp": 1773789700.5093412
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1740,
+      "completion_tokens": 245,
+      "estimated_cost": 0.001088,
+      "timestamp": 1773789701.2688177
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2583,
+      "completion_tokens": 151,
+      "estimated_cost": 0.001275,
+      "timestamp": 1773789703.4310172
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1723,
+      "completion_tokens": 229,
+      "estimated_cost": 0.001056,
+      "timestamp": 1773789703.7916095
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1737,
+      "completion_tokens": 230,
+      "estimated_cost": 0.001063,
+      "timestamp": 1773789703.8722072
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2610,
+      "completion_tokens": 144,
+      "estimated_cost": 0.001274,
+      "timestamp": 1773789706.1495948
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2595,
+      "completion_tokens": 152,
+      "estimated_cost": 0.001281,
+      "timestamp": 1773789706.3301673
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1741,
+      "completion_tokens": 232,
+      "estimated_cost": 0.001068,
+      "timestamp": 1773789706.663619
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2587,
+      "completion_tokens": 138,
+      "estimated_cost": 0.001256,
+      "timestamp": 1773789708.6789267
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1730,
+      "completion_tokens": 237,
+      "estimated_cost": 0.001071,
+      "timestamp": 1773789709.2186537
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1738,
+      "completion_tokens": 271,
+      "estimated_cost": 0.001129,
+      "timestamp": 1773789709.9538643
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "copywriter",
+      "prompt_tokens": 2595,
+      "completion_tokens": 151,
+      "estimated_cost": 0.00128,
+      "timestamp": 1773789711.2849474
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1724,
+      "completion_tokens": 232,
+      "estimated_cost": 0.001061,
+      "timestamp": 1773789712.112982
+    },
+    {
+      "campaign_id": "campaign_afa589c2",
+      "step": "reviewer",
+      "prompt_tokens": 1737,
+      "completion_tokens": 246,
+      "estimated_cost": 0.001088,
+      "timestamp": 1773789715.025178
+    }
+  ],
+  "totals": {
+    "prompt_tokens": 493477,
+    "completion_tokens": 61768,
+    "total_tokens": 555245,
+    "estimated_cost": 0.296221,
+    "api_calls": 243
+  }
+}

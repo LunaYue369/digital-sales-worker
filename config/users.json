@@ -1,0 +1,24 @@
+{
+  "U09KEMHNZQW": {
+    "name": "Trigg",
+    "dir": "trigg",
+    "role": "admin"
+  },
+  "U0AGHF2F1V1": {
+    "name": "Nathan",
+    "dir": "nate",
+    "gmail": "nate@gmic.ai",
+    "drive_folder_id": "1VDv1gMcKjfqEg6_qZ2Sp9i8m7as1K4DD",
+    "signature": "Best,\nNathan\nGMIC AI – Telalive\nSchedule Free Demo\nhttps://calendly.com/nate-gmic/30min",
+    "greeting_style": "Hi {company},",
+    "meeting_link": "https://calendly.com/nate-gmic/30min"
+  },
+  "U0AJZ35P6KW": {
+    "name": "Daniel",
+    "dir": "danny",
+    "gmail": "danny@gmic.ai",
+    "drive_folder_id": "1OYFbKLgwVDsbbFChL7kfVUtZghRodPQh",
+    "signature": "Best,\nDaniel Zhao\n6468661933 GMIC AI – Telalive\nhttps://telalive.us",
+    "greeting_style": "Hi {company},"
+  }
+}
