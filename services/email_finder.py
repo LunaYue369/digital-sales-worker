@@ -10,6 +10,9 @@ log = logging.getLogger(__name__)
 EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}")
 CONTACT_PATHS = ["/contact", "/contact-us", "/about", "/about-us", "/team"]
 FAKE_SUFFIXES = (".png", ".jpg", ".jpeg", ".gif", ".svg", ".css", ".js", ".webp")
+PLACEHOLDER_EMAILS = {"user@domain.com", "email@domain.com", "info@domain.com",
+                      "contact@domain.com", "admin@domain.com", "user@example.com",
+                      "email@example.com", "info@example.com", "test@example.com"}
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; TeLaLiveBot/1.0)"}
 
 
@@ -25,9 +28,16 @@ def _clean_emails(raw: list[str]) -> list[str]:
             continue
         if e.startswith(("noreply@", "no-reply@", "mailer-daemon@")):
             continue
+        if e in PLACEHOLDER_EMAILS:
+            continue
         seen.add(e)
         clean.append(e)
     return clean
+
+
+def is_placeholder_email(email: str) -> bool:
+    """Check if an email is a known placeholder/fake address."""
+    return email.lower().strip() in PLACEHOLDER_EMAILS
 
 
 def find_email(website: str) -> str | None:

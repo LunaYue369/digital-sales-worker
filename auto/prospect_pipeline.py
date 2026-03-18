@@ -11,7 +11,8 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
-from services import email_finder, drive_uploader
+from services import drive_uploader
+from services.email_finder import find_email, is_placeholder_email
 from services.spreadsheet import _load_sent_emails
 from core.user_config import user_data_dir
 
@@ -189,6 +190,8 @@ def _parse_gosom_csv(csv_path: str) -> list[dict]:
 
             raw_email = (row.get("emails") or "").strip()
             email = raw_email.split(",")[0].strip() if raw_email else ""
+            if is_placeholder_email(email):
+                email = ""
 
             lead = {
                 "company_name": row.get("title", "").strip(),
@@ -257,7 +260,7 @@ def _save_prospect_log(user_id: str, new_domains: set[str]):
 def _enrich_emails(leads: list[dict]):
     with ThreadPoolExecutor(max_workers=EMAIL_FINDER_WORKERS) as pool:
         futures = {
-            pool.submit(email_finder.find_email, lead["website"]): lead
+            pool.submit(find_email, lead["website"]): lead
             for lead in leads
         }
         for future in as_completed(futures):
