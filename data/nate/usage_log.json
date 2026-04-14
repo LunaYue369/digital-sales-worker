@@ -1943,13 +1943,37 @@
       "completion_tokens": 246,
       "estimated_cost": 0.001088,
       "timestamp": 1773789715.025178
+    },
+    {
+      "campaign_id": "test_template_001",
+      "step": "researcher",
+      "prompt_tokens": 1884,
+      "completion_tokens": 401,
+      "estimated_cost": 0.001395,
+      "timestamp": 1775858300.907194
+    },
+    {
+      "campaign_id": "test_template_001",
+      "step": "copywriter",
+      "prompt_tokens": 3155,
+      "completion_tokens": 300,
+      "estimated_cost": 0.001742,
+      "timestamp": 1775858306.064547
+    },
+    {
+      "campaign_id": "test_template_001",
+      "step": "copywriter",
+      "prompt_tokens": 2912,
+      "completion_tokens": 125,
+      "estimated_cost": 0.001365,
+      "timestamp": 1775858308.3181036
     }
   ],
   "totals": {
-    "prompt_tokens": 493477,
-    "completion_tokens": 61768,
-    "total_tokens": 555245,
-    "estimated_cost": 0.296221,
-    "api_calls": 243
+    "prompt_tokens": 501428,
+    "completion_tokens": 62594,
+    "total_tokens": 564022,
+    "estimated_cost": 0.300723,
+    "api_calls": 246
   }
 }

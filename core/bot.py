@@ -3,7 +3,7 @@ import re
 import threading
 
 from core import state
-from core.user_config import is_registered, is_admin, get_user_name
+from core.user_config import is_registered, is_admin, get_user_name, list_templates
 from auto.auto_pipeline import run_auto_pipeline
 from auto.track_pipeline import run_track_pipeline
 from auto.prospect_pipeline import run_prospect
@@ -17,7 +17,7 @@ from services.auth import (
 log = logging.getLogger(__name__)
 
 
-def handle_message(event: dict, say):
+def handle_message(event: dict, say, client=None):
     text = (event.get("text") or "").strip()
 
     if event.get("bot_id") or event.get("subtype") == "bot_message":
@@ -54,7 +54,13 @@ def handle_message(event: dict, say):
     elif lower.startswith("/ status auto"):
         _handle_status_auto(user_id, say)
     elif lower.startswith("/ auto"):
-        _handle_auto(user_id, say)
+        # Parse optional template name: "/ auto hvac-survey" → template="hvac-survey"
+        template = re.sub(r"^/\s*auto\s*", "", text, flags=re.IGNORECASE).strip() or "default"
+        channel = event.get("channel", "")
+        _handle_auto(user_id, say, template, client, channel)
+    # templates
+    elif lower.startswith("/ templates"):
+        _handle_templates(user_id, say)
     # track
     elif lower.startswith("/ stop track"):
         _handle_stop_track(user_id, say)
@@ -76,6 +82,9 @@ def handle_message(event: dict, say):
     # usage
     elif lower.startswith("/ usage"):
         _handle_usage(user_id, text, say)
+    # help
+    elif lower.startswith("/ help"):
+        _handle_help(say)
 
 
 # ── Auth ───────────────────────────────────────────────────────────
@@ -127,12 +136,21 @@ def _handle_auth_code(user_id: str, code: str, say):
 
 # ── Auto ───────────────────────────────────────────────────────────
 
-def _handle_auto(user_id: str, say):
+def _handle_auto(user_id: str, say, template: str = "default", client=None, channel: str = ""):
     if state.is_auto_running(user_id):
         say("Auto mode is already running. Use `/ stop auto` to stop it.")
         return
+    available = list_templates(user_id)
+    if template not in available:
+        say(f"Unknown template `{template}`. Your templates: {', '.join(f'`{t}`' for t in available)}\n"
+            f"Use `/ templates` to see details, or ask an admin to add a new one in `config/users.json`.")
+        return
     state.start_auto(user_id)
-    t = threading.Thread(target=run_auto_pipeline, args=(user_id, say), daemon=True)
+    t = threading.Thread(
+        target=run_auto_pipeline,
+        args=(user_id, say, template, client, channel),
+        daemon=True,
+    )
     state.set_auto_thread(user_id, t)
     t.start()
 
@@ -261,3 +279,52 @@ def _handle_prospect_help(say):
         "`/ prospect dental clinic in Santa Monica, CA`\n"
         "`/ prospect dental clinic in Pasadena`\n\n"
         "After CSV appears in Drive, use `/ auto` to start sending.")
+
+
+def _handle_templates(user_id: str, say):
+    """List the user's email templates with type + subject preview."""
+    from core.user_config import get_template_config
+    names = list_templates(user_id)
+    lines = [f":scroll: *Your Email Templates* ({len(names)} total)\n"]
+    for name in names:
+        tpl = get_template_config(user_id, name)
+        if tpl.get("static_body"):
+            subj = tpl.get("static_subject", "(no subject)")
+            lines.append(f"• `{name}` — *static* · subject: _{subj}_")
+        else:
+            lines.append(f"• `{name}` — *AI-generated* (research + write + review)")
+    lines.append(
+        "\n:bulb: Run with `/ auto <name>`. "
+        "To add a new template, edit `config/users.json` → add an entry under your `templates` key. "
+        "For AI templates you can also drop `config/<you>/souls/copywriter.<name>.md` "
+        "to customize voice/style for that template."
+    )
+    say("\n".join(lines))
+
+
+def _handle_help(say):
+    say(
+        ":robot_face: *Digital Sales Bot — Commands*\n\n"
+        ":envelope: *Email Campaigns*\n"
+        "`/ auto` — Start AI-powered email campaign (research + write + review + send)\n"
+        "`/ auto <template>` — Use a specific template (e.g. `/ auto hvac-survey`)\n"
+        "`/ templates` — List your available email templates\n"
+        "`/ stop auto` — Stop the current campaign\n"
+        "`/ status auto` — Check campaign status\n\n"
+        ":mag: *Lead Generation*\n"
+        "`/ prospect <query>` — Scrape Google Maps for leads (e.g. `/ prospect HVAC in LA, CA`)\n\n"
+        ":incoming_envelope: *Reply Tracking*\n"
+        "`/ track` — Start monitoring for email replies\n"
+        "`/ stop track` — Stop reply tracking\n"
+        "`/ status track` — Check tracking status\n\n"
+        ":bar_chart: *Reports*\n"
+        "`/ report` — Campaign performance report\n"
+        "`/ insights` — AI-generated insights from reply data\n"
+        "`/ usage` — Token usage and cost summary\n\n"
+        ":key: *Setup*\n"
+        "`/ auth` — Authorize your Gmail account\n"
+        "`/ help` — Show this message\n\n"
+        ":bulb: *Templates:* Use `/ auto` for the default AI pitch, "
+        "or `/ auto <name>` for a custom template (e.g. survey, discovery). "
+        "Ask your admin to set up new templates."
+    )

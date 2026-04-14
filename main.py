@@ -25,15 +25,15 @@ app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
 
 @app.event("message")
-def on_message(event, say):
+def on_message(event, say, client):
     # In DMs, respond to all messages; in channels, ignore (use @mention instead)
     if event.get("channel_type") == "im":
-        handle_message(event, say)
+        handle_message(event, say, client)
 
 
 @app.event("app_mention")
-def on_mention(event, say):
-    handle_message(event, say)
+def on_mention(event, say, client):
+    handle_message(event, say, client)
 
 
 if __name__ == "__main__":

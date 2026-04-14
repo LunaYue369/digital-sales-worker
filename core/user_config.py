@@ -89,6 +89,48 @@ def is_admin(user_id: str) -> bool:
     return config.get("role") == "admin"
 
 
+def get_template_config(user_id: str, template: str = "default") -> dict:
+    """Get template-specific config (signature, greeting_style).
+
+    Looks in config['templates'][template] first.
+    Falls back to top-level signature/greeting_style for backward compat.
+    """
+    config = get_user_config(user_id)
+    if not config:
+        return {}
+
+    # New format: templates dict
+    templates = config.get("templates")
+    if templates and template in templates:
+        return templates[template]
+
+    # Fallback: top-level fields = default template
+    if template == "default":
+        result = {}
+        for key in ("signature", "greeting_style"):
+            if key in config:
+                result[key] = config[key]
+        return result
+
+    return {}
+
+
+def list_templates(user_id: str) -> list[str]:
+    """Return the list of template names configured for a user.
+
+    Always includes 'default'. Reads from config['templates'] dict.
+    Users can add unlimited templates by editing users.json.
+    """
+    config = get_user_config(user_id)
+    if not config:
+        return ["default"]
+    templates = config.get("templates") or {}
+    names = list(templates.keys())
+    if "default" not in names:
+        names.insert(0, "default")
+    return names
+
+
 def list_users() -> dict:
     with _lock:
         return _load_users()

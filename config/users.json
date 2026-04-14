@@ -14,16 +14,58 @@
     "dir": "nate",
     "gmail": "nate@gmic.ai",
     "drive_folder_id": "1VDv1gMcKjfqEg6_qZ2Sp9i8m7as1K4DD",
-    "signature": "Best,\nNathan\nGMIC AI – Telalive\nSchedule Free Demo\nhttps://calendly.com/nate-gmic/30min",
-    "greeting_style": "Hi {company},",
-    "meeting_link": "https://calendly.com/nate-gmic/30min"
+    "meeting_link": "https://calendly.com/nate-gmic/30min",
+    "templates": {
+      "default": {
+        "greeting_style": "Hi,",
+        "signature": "If you're open to it, I'd love to show you a quick 10-minute demo — no pressure at all.\n\nYou can grab a time here:\nhttps://calendly.com/nate-gmic/30min\n\nOr feel free to reply with a time that works for you — happy to adjust.\n\nFeel free to check out some client testimonials and demos:\nHow Bizmic Helps You Close More Deals: https://www.youtube.com/watch?v=yaxy2sXgRfY\nSee Bizmic in Action: https://drive.google.com/file/d/17LDWgfWGtsfxan4v4v_dd58ypOLYxaB8/view?usp=drive_link\nLive Client Demo — Real Estate: https://drive.google.com/file/d/1xo3bPcdmbBLSqEiP3aEr2GODDSotLtEc/view?usp=drive_link\n\nBest regards,\n\nNathan Hillyer\nGMIC AI\n(669) 900-0008\n300 S Harbor Blvd # 1020, Anaheim, CA 92805\nhttps://gainstrong.en.alibaba.com/"
+      },
+      "hvac-survey": {
+        "static_subject": "Quick question about your business calls",
+        "static_body": "Hi {first_name},\n\nMy name is Nathan from GMIC.ai. We're conducting a brief research study to better understand how HVAC companies handle customer calls.\n\nIf you have a minute, we'd love your input on a couple of questions:\n\nAbout how many calls does your business receive in a typical week?\nDo you ever miss calls or receive calls after hours?\nWhat system or CRM do you use to manage customers?\n\nThank you for your time and for the work you do in the community!",
+        "signature": "Best regards,\n\nNathan Hillyer\nGMIC.ai\nNate@gmic.ai\n209-600-5577"
+      }
+    }
+  },
+  "U0AP27WGPJS3": {
+    "name": "Miguel",
+    "dir": "miguel",
+    "gmail": "miguel@gmic.ai",
+    "drive_folder_id": "1EmlFw7QZYreA7tc4fxwQZ14usAlPeTA0",
+    "templates": {
+      "default": {
+        "greeting_style": "Hello,",
+        "signature": "Best regards,\n\nMiguel Carlos\nGMIC AI\n(909) 856-9298\nmiguel@gmic.ai"
+      },
+      "telalive-only": {
+        "greeting_style": "Hello,",
+        "signature": "Best regards,\n\nMiguel Carlos\nGMIC AI\n(909) 856-9298\nmiguel@gmic.ai"
+      },
+      "discovery": {
+        "greeting_style": "Hello,",
+        "signature": "Best regards,\n\nMiguel Carlos\nGMIC AI\n(909) 856-9298\nmiguel@gmic.ai"
+      },
+      "restaurant-only": {
+        "greeting_style": "Hello,",
+        "signature": "Best regards,\n\nMiguel Carlos\nGMIC AI\n(909) 856-9298\nmiguel@gmic.ai"
+      },
+      "straight-to-point": {
+        "greeting_style": "Hello,",
+        "signature": "Best regards,\n\nMiguel Carlos\nGMIC AI\n(909) 856-9298\nmiguel@gmic.ai"
+      }
+    }
   },
   "U0AJZ35P6KW": {
     "name": "Daniel",
     "dir": "danny",
     "gmail": "danny@gmic.ai",
     "drive_folder_id": "1OYFbKLgwVDsbbFChL7kfVUtZghRodPQh",
-    "signature": "Best,\nDaniel Zhao\n6468661933 GMIC AI – Telalive\nhttps://telalive.us",
-    "greeting_style": "Hi {company},"
+    "meeting_link": "https://calendly.com/danny-gmic/30min",
+    "templates": {
+      "default": {
+        "greeting_style": "Hi,",
+        "signature": "If you're open to it, I'd love to show you a quick 10-minute demo — no pressure at all.\n\nYou can grab a time here:\nhttps://calendly.com/danny-gmic/30min\n\nOr feel free to reply with a time that works for you — happy to adjust.\n\nFeel free to check out some client testimonials and demos:\nHow Bizmic Helps You Close More Deals: https://www.youtube.com/watch?v=yaxy2sXgRfY\nSee Bizmic in Action: https://drive.google.com/file/d/17LDWgfWGtsfxan4v4v_dd58ypOLYxaB8/view?usp=drive_link\nLive Client Demo — Real Estate: https://drive.google.com/file/d/1xo3bPcdmbBLSqEiP3aEr2GODDSotLtEc/view?usp=drive_link\n\nBest regards,\n\nDaniel Zhao\n(646) 866 1933\n\nGMIC AI\n(669) 900-0008\n300 S Harbor Blvd # 1020, Anaheim, CA 92805\nhttps://gainstrong.en.alibaba.com/"
+      }
+    }
   }
 }

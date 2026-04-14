@@ -48,17 +48,30 @@ def get_soul(agent_id: str) -> str:
     return _souls.get(agent_id, "")
 
 
-def _get_user_soul(agent_id: str, user_id: str) -> str | None:
-    """Try to load a per-user soul from config/{dir}/souls/{agent_id}.md."""
+def _get_user_soul(agent_id: str, user_id: str, template: str = "default") -> str | None:
+    """Try to load a per-user soul from config/{dir}/souls/.
+
+    For non-default templates, tries {agent_id}.{template}.md first,
+    then falls back to {agent_id}.md.
+    """
     if not user_id:
         return None
-    user_soul_path = Path(user_config_dir(user_id)) / "souls" / f"{agent_id}.md"
-    if user_soul_path.exists():
-        return user_soul_path.read_text(encoding="utf-8")
+    souls_dir = Path(user_config_dir(user_id)) / "souls"
+
+    # Try template-specific soul first (e.g. copywriter.discovery.md)
+    if template != "default":
+        template_path = souls_dir / f"{agent_id}.{template}.md"
+        if template_path.exists():
+            return template_path.read_text(encoding="utf-8")
+
+    # Fall back to default soul (e.g. copywriter.md)
+    default_path = souls_dir / f"{agent_id}.md"
+    if default_path.exists():
+        return default_path.read_text(encoding="utf-8")
     return None
 
 
-def build_system_prompt(agent_id: str, user_id: str = "") -> str:
+def build_system_prompt(agent_id: str, user_id: str = "", template: str = "default") -> str:
     """Build system prompt: _shared + default soul + per-user soul (if exists).
 
     Layered composition:
@@ -69,6 +82,9 @@ def build_system_prompt(agent_id: str, user_id: str = "") -> str:
     Per-user soul is ADDITIVE, not a replacement. This way per-user files
     only need to contain what's different (e.g. Nate's subject line style),
     while the generic agent soul provides the base (input format, output format, etc.).
+
+    Template support: for non-default templates (e.g. "discovery"), tries
+    {agent_id}.{template}.md first, falls back to {agent_id}.md.
     """
     parts = []
     if _shared:
@@ -80,9 +96,9 @@ def build_system_prompt(agent_id: str, user_id: str = "") -> str:
         parts.append(soul)
 
     # Layer per-user soul on top (additive)
-    user_soul = _get_user_soul(agent_id, user_id)
+    user_soul = _get_user_soul(agent_id, user_id, template)
     if user_soul is not None:
         parts.append(user_soul)
-        log.debug("Layered per-user soul for %s (user=%s)", agent_id, user_id)
+        log.debug("Layered per-user soul for %s (user=%s, template=%s)", agent_id, user_id, template)
 
     return "\n\n---\n\n".join(parts)

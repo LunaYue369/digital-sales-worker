@@ -6,7 +6,7 @@ from openai import OpenAI
 
 from agents.soul_loader import build_system_prompt
 from services import usage_tracker
-from core.user_config import get_user_config
+from core.user_config import get_user_config, get_template_config
 
 log = logging.getLogger(__name__)
 
@@ -23,19 +23,30 @@ DEFAULT_SIGNATURE = (
 )
 
 
-def _get_user_signature(user_id: str) -> str:
-    """Get per-user signature from users.json, or fallback to default."""
-    config = get_user_config(user_id) if user_id else None
-    if config and config.get("signature"):
-        return config["signature"]
+def _get_user_signature(user_id: str, template: str = "default") -> str:
+    """Get per-user signature, checking template-specific config first."""
+    if user_id:
+        tpl = get_template_config(user_id, template)
+        if tpl.get("signature"):
+            return tpl["signature"]
     return DEFAULT_SIGNATURE
 
 
-def _get_user_greeting(user_id: str, company_name: str) -> str:
-    """Get per-user greeting style from users.json, or fallback to default."""
-    config = get_user_config(user_id) if user_id else None
-    if config and config.get("greeting_style"):
-        return config["greeting_style"].replace("{company}", company_name) + "\n\n"
+def _get_user_greeting(user_id: str, company_name: str, contact_name: str = "", template: str = "default") -> str:
+    """Get per-user greeting style, checking template-specific config first.
+    Supports {contact} (contact person name) and {company} placeholders.
+    """
+    style = None
+    if user_id:
+        tpl = get_template_config(user_id, template)
+        style = tpl.get("greeting_style")
+
+    if style:
+        if "{contact}" in style:
+            name = contact_name if contact_name else f"{company_name} team"
+            style = style.replace("{contact}", name)
+        style = style.replace("{company}", company_name)
+        return style + "\n\n"
     return f"Hi {company_name} team,\n\n"
 
 
@@ -45,6 +56,35 @@ def _get_sender_identity(user_id: str) -> str:
     if config and config.get("name"):
         return f"{config['name']} from GMIC AI"
     return "a salesperson from GMIC AI"
+
+
+def _write_static_email(company: dict, user_id: str, tpl: dict) -> tuple[str, str, dict]:
+    """Static template — no GPT call, just string interpolation."""
+    contact_name = company.get("contact_name", "")
+    first_name = company.get("first_name", "")
+    if not first_name and contact_name:
+        first_name = contact_name.split()[0]
+    last_name = company.get("last_name", "")
+    company_name = company.get("company_name", "")
+
+    subject = tpl.get("static_subject", "Quick question")
+    body = tpl["static_body"]
+    # Capitalize names in case source data has inconsistent casing
+    first_name = first_name.capitalize() if first_name else ""
+    last_name = last_name.capitalize() if last_name else ""
+    contact_name = " ".join(w.capitalize() for w in contact_name.split()) if contact_name else ""
+
+    for placeholder, value in [
+        ("{first_name}", first_name),
+        ("{last_name}", last_name),
+        ("{contact_name}", contact_name),
+        ("{company_name}", company_name),
+    ]:
+        body = body.replace(placeholder, value)
+
+    signature = tpl.get("signature", DEFAULT_SIGNATURE)
+    full_body = f"{body}\n\n{signature}"
+    return subject, full_body, {"prompt": 0, "completion": 0}
 
 
 def _get_client() -> OpenAI:
@@ -96,11 +136,17 @@ def _ensure_paragraphs(body: str) -> str:
 
 
 # copywriter初次写或者重写邮件，返回 subject str，body str，tokens消耗字典
-def write_email(company: dict, campaign_id: str, user_id: str = "", feedback: str = "", previous_email: str = "") -> tuple[str, str, dict]:
+def write_email(company: dict, campaign_id: str, user_id: str = "", feedback: str = "", previous_email: str = "", template: str = "default") -> tuple[str, str, dict]:
+    # 静态模板模式 — 跳过 GPT，直接套名字
+    if user_id:
+        tpl = get_template_config(user_id, template)
+        if tpl.get("static_body"):
+            return _write_static_email(company, user_id, tpl)
+
     # research人格查出来的brief
     brief = company.get("brief", {})
-    # 加载copywriter人格
-    system_prompt = build_system_prompt("copywriter", user_id)
+    # 加载copywriter人格（支持模板选择）
+    system_prompt = build_system_prompt("copywriter", user_id, template)
     client = _get_client()
     company_name = company.get("company_name", "")
     # 定制化开头
@@ -161,9 +207,10 @@ def write_email(company: dict, campaign_id: str, user_id: str = "", feedback: st
     clean = _clean_body(raw_body)
     # 保证Body分自然段
     clean = _ensure_paragraphs(clean)
-    # 添加 per-user 打招呼+落款
-    greeting = _get_user_greeting(user_id, company_name)
-    signature = _get_user_signature(user_id)
+    # 添加 per-user 打招呼+落款（支持模板选择）
+    contact_name = company.get("contact_name", "")
+    greeting = _get_user_greeting(user_id, company_name, contact_name, template)
+    signature = _get_user_signature(user_id, template)
     body = f"{greeting}{clean}\n\n{signature}"
 
     return subject, body, {"prompt": pt, "completion": ct}

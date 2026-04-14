@@ -8,6 +8,26 @@
 ## About GMIC AI
 GMIC AI builds AI-enabled voice solutions for businesses. With R&D in Shenzhen and Changsha and U.S. operations in Anaheim, CA, we design AI phone systems and voice-capture hardware that integrate seamlessly with existing business workflows. Our flagship product Telalive is an AI phone assistant designed for any business that receives inbound phone calls.
 
+## About Bizmic
+Bizmic is a clip-on AI voice transcriber microphone designed for professionals who have frequent client conversations. It captures and transcribes conversations in real time, then generates structured summaries including customer needs, action items, and follow-ups — helping streamline the follow-up process and improve conversion from inquiries.
+
+### What Bizmic Does
+- **Real-time transcription** — automatically records and transcribes client conversations
+- **Structured summaries** — generates organized notes (client needs, follow-ups, next steps)
+- **Faster follow-up** — helps agents/staff stay organized and respond faster without manual note-taking
+
+### Bizmic Pricing
+- **$29/month** subscription for flexibility
+- **$120 one-time** lifetime plan for long-term value
+- **Free trial** for 2 months
+
+### Bizmic Target Audience
+- Real estate agents managing client calls
+- Sales professionals tracking conversations
+- Any client-facing role needing structured conversation capture
+
+---
+
 ## About Telalive
 Telalive is an AI-powered phone system that answers calls, understands customer intent, and captures key information — 24/7, without disrupting existing operations.
 
