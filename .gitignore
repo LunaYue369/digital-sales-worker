@@ -1,0 +1,19 @@
+.env
+gmail_token.json
+client_secret.json
+service-account.json
+firebase-sa.json
+*-sa.json
+data/research_cache.json
+data/processed_files.json
+data/sent_log.json
+data/prospect_log.json
+# Per-user runtime data (sent emails, replies, costs) — sensitive, keep local only
+data/*/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.DS_Store

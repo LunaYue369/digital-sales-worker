@@ -1,0 +1,19 @@
+{
+  "U_DEMO_USER": {
+    "name": "Demo Rep",
+    "dir": "demo_user",
+    "role": "admin",
+    "gmail": "demo@example.com",
+    "drive_folder_id": "<your-drive-folder-id>",
+    "templates": {
+      "comprehensive": {
+        "greeting_style": "Hello,",
+        "signature": "Best regards,\n\nDemo Rep\nAcme AI\n(555) 555-0100\ndemo@example.com"
+      },
+      "discovery": {
+        "greeting_style": "Hello,",
+        "signature": "Best regards,\n\nDemo Rep\nAcme AI\n(555) 555-0100\ndemo@example.com"
+      }
+    }
+  }
+}
